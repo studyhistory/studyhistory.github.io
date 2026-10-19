@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U.H</title>
+<link rel="icon" href="favicon.ico">
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07050d; --bg2:#0e0a1c;
+  --p1:#a78bfa; --p2:#8b5cf6; --p3:#7c3aed; --p4:#5b21b6;
+  --text:#f3efff; --muted:#a89bc9;
+  --glass:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.03));
+  --line:rgba(167,139,250,.22);
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;background:var(--bg);color:var(--text);
+  font-family:Sora,"Segoe UI",system-ui,sans-serif;overflow-x:hidden;
+}
+/* ambient glow */
+body:before,body:after{content:"";position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(110px)}
+body:before{width:640px;height:640px;top:-220px;right:-160px;background:rgba(124,58,237,.38)}
+body:after{width:560px;height:560px;bottom:-240px;left:-160px;background:rgba(168,85,247,.22)}
+.grain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(167,139,250,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.05) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 10%,transparent 70%)}
+.wrap{position:relative;z-index:1;width:min(1180px,100% - 32px);margin:0 auto}
+
+/* header */
+header{position:sticky;top:12px;z-index:20;margin-top:12px}
+.bar{display:flex;align-items:center;gap:16px;padding:10px 12px 10px 18px;border-radius:999px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.2)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;font-size:18px;white-space:nowrap}
+.logo i{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:15px;
+  background:linear-gradient(160deg,#c4b5fd,#7c3aed);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 16px rgba(124,58,237,.7)}
+.search{flex:1;position:relative;max-width:420px;margin-left:auto}
+.search input{width:100%;height:42px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.35);
+  color:var(--text);font:inherit;font-size:14px;padding:0 16px 0 42px;outline:none;transition:.2s}
+.search input::placeholder{color:#7d6fa3}
+.search input:focus{border-color:var(--p1);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#8f80b8}
+
+/* buttons */
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;color:#fff;
+  height:42px;padding:0 20px;border-radius:999px;position:relative;overflow:hidden;white-space:nowrap;
+  background:linear-gradient(180deg,#a78bfa 0%,#7c3aed 55%,#6d28d9 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 6px rgba(0,0,0,.25),0 8px 24px rgba(124,58,237,.5);
+  transition:transform .15s,box-shadow .2s,filter .2s}
+.btn:before{content:"";position:absolute;left:0;right:0;top:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,0))}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 12px 34px rgba(139,92,246,.7)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{background:var(--glass);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.btn.ghost:before{display:none}
+.btn.sm{height:36px;padding:0 14px;font-size:13px}
+
+/* hero */
+.hero{padding:72px 0 36px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.04em;color:#d8ccff;
+  background:var(--glass);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.pill b{width:7px;height:7px;border-radius:50%;background:#c4b5fd;box-shadow:0 0 10px #a78bfa}
+h1{font-size:clamp(40px,7vw,84px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:22px auto 18px;max-width:900px;
+  background:linear-gradient(180deg,#fff 20%,#b79dff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:clamp(15px,2vw,18px);max-width:520px;margin:0 auto 30px;line-height:1.6}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn.lg{height:52px;padding:0 30px;font-size:15px}
+
+/* toolbar */
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:30px 0 22px;flex-wrap:wrap}
+.toolbar h2{font-size:22px;letter-spacing:-.02em}
+.toolbar h2 span{color:var(--muted);font-weight:600;font-size:14px;margin-left:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{cursor:pointer;font:inherit;font-size:13px;font-weight:600;color:var(--muted);padding:8px 16px;border-radius:999px;
+  background:var(--glass);border:1px solid var(--line);transition:.2s}
+.chip:hover{color:#fff;border-color:var(--p1)}
+.chip.on{color:#fff;background:linear-gradient(180deg,#8b5cf6,#6d28d9);border-color:transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 20px rgba(124,58,237,.5)}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px;padding-bottom:70px}
+.card{position:relative;border-radius:var(--radius);padding:10px;background:var(--glass);border:1px solid var(--line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;
+  box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s;
+  animation:rise .5s both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.card:hover{transform:translateY(-6px);border-color:rgba(196,181,253,.6);box-shadow:0 26px 70px rgba(124,58,237,.38),inset 0 1px 0 rgba(255,255,255,.3)}
+.art{position:relative;height:178px;border-radius:15px;overflow:hidden;display:grid;place-items:center;isolation:isolate}
+.art:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(155deg,rgba(255,255,255,.26) 0%,rgba(255,255,255,.04) 38%,transparent 40%),linear-gradient(0deg,rgba(7,5,13,.55),transparent 50%)}
+.art .glyph{position:relative;z-index:1;font-weight:800;font-size:76px;letter-spacing:-.05em;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.45);transition:transform .35s}
+.card:hover .glyph{transform:scale(1.1) rotate(-2deg)}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;z-index:3;top:10px;left:10px;font-size:11px;font-weight:700;letter-spacing:.05em;padding:5px 11px;border-radius:999px;
+  background:rgba(7,5,13,.55);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.fav{position:absolute;z-index:3;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);cursor:pointer;
+  background:rgba(7,5,13,.55);backdrop-filter:blur(8px);display:grid;place-items:center;transition:.2s}
+.fav svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2}
+.fav:hover{transform:scale(1.12)}
+.fav.on{background:linear-gradient(180deg,#a78bfa,#7c3aed)}.fav.on svg{fill:#fff}
+.info{padding:16px 8px 8px;display:flex;align-items:center;gap:12px}
+.info div{flex:1;min-width:0}
+.info h3{font-size:17px;letter-spacing:-.01em}
+.info p{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 0}
+
+footer{position:relative;z-index:1;text-align:center;color:#6f6293;font-size:13px;padding:0 0 40px}
+
+/* player */
+.player{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;padding:14px;gap:12px;
+  background:rgba(5,3,10,.82);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.player.open{display:flex;animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.ptop{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 18px;border-radius:999px;background:var(--glass);border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
+.ptop h4{font-size:15px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ptop h4 small{color:var(--muted);font-weight:600;margin-left:8px}
+.stage{flex:1;min-height:0;border-radius:20px;overflow:hidden;background:#000;border:1px solid var(--line);
+  box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 90px rgba(124,58,237,.35)}
+.stage{position:relative}
+.note{position:absolute;inset:0;z-index:5;display:none;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 0%,rgba(124,58,237,.35),#07050d 70%)}
+.note.show{display:grid}
+.note div{max-width:460px}
+.note h3{font-size:22px;margin-bottom:10px}
+.note p{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:12px}
+.note code{display:block;font-size:12px;color:#d8ccff;background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:10px;padding:5px 10px;margin:5px 0;text-align:left}
+.stage iframe{width:100%;height:100%;border:0;display:block;background:#000}
+
+@media (max-width:640px){
+  .bar{border-radius:26px;flex-wrap:wrap}
+  .search{max-width:none;order:3;flex-basis:100%;margin:0}
+  .hero{padding-top:48px}
+  .btn.hide-sm{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* U.H additions */
+.view{display:none}.view.on{display:block;animation:fade .3s}
+.home{min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0 60px}
+.home h1{font-size:clamp(72px,16vw,190px);margin:20px auto 10px}
+.home>p{color:var(--muted);font-size:16px;margin-bottom:44px}
+.tiles{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.tile{width:210px;padding:34px 20px 26px;border-radius:var(--radius);cursor:pointer;color:var(--text);font:inherit;text-align:center;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
+.tile:hover{transform:translateY(-8px);border-color:rgba(196,181,253,.6);box-shadow:0 26px 70px rgba(124,58,237,.45),inset 0 1px 0 rgba(255,255,255,.3)}
+.tile .ic{width:84px;height:84px;margin:0 auto 18px;border-radius:26px;display:grid;place-items:center;
+  background:linear-gradient(160deg,#c4b5fd,#7c3aed);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 30px rgba(124,58,237,.7)}
+.tile .ic svg{width:42px;height:42px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile b{display:block;font-size:20px;letter-spacing:-.01em}
+.tile span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.logo{cursor:pointer}
+.back{margin-right:auto}
+.page-title{margin:34px 0 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.page-title h2{font-size:28px;letter-spacing:-.02em}
+.page-title span{color:var(--muted);font-size:14px;font-weight:600}
+.sites{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding-bottom:70px;align-items:start}
+.card{cursor:default}
+.card:hover .glyph{transform:none}
+.card .art{height:150px}
+.card .info{display:block;padding:16px 8px 6px}
+.card .info h3{margin-bottom:12px}
+.lk{display:flex;flex-direction:column;gap:8px}
+.lk a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;text-decoration:none;color:var(--text);font-size:13.5px;font-weight:600;
+  background:rgba(0,0,0,.28);border:1px solid var(--line);transition:.2s;overflow:hidden}
+.lk a span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lk a svg{width:15px;height:15px;flex:none;stroke:#b79dff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lk a:hover{border-color:var(--p1);background:rgba(139,92,246,.22);transform:translateX(3px)}
+.lk a i{font-style:normal;font-size:11px;color:var(--muted)}
+
+/* AI chat */
+.chat{display:flex;flex-direction:column;height:calc(100vh - 170px);min-height:420px;margin-bottom:30px;border-radius:var(--radius);overflow:hidden;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+.chead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.chead select{flex:1;max-width:320px;height:36px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);font:inherit;font-size:13px;padding:0 14px;outline:none}
+.chead select option{background:#0e0a1c}
+.chead .sp{flex:1}
+.msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:min(720px,86%);padding:12px 16px;border-radius:18px;font-size:14.5px;line-height:1.6;white-space:pre-wrap;word-wrap:break-word;animation:rise .3s both}
+.msg.user{align-self:flex-end;background:linear-gradient(180deg,#8b5cf6,#6d28d9);box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+.msg.ai{align-self:flex-start;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.msg.err{align-self:flex-start;background:rgba(190,30,60,.18);border:1px solid rgba(255,100,120,.4);color:#ffc2cb}
+.msg pre{white-space:pre-wrap;background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px;overflow-x:auto}
+.msg code{background:rgba(0,0,0,.4);padding:1px 6px;border-radius:6px;font-size:13px}
+.msg pre code{background:none;padding:0}
+.dots{display:inline-flex;gap:4px}.dots i{width:7px;height:7px;border-radius:50%;background:#b79dff;animation:bl 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.welcome{margin:auto;text-align:center;color:var(--muted);font-size:14px;line-height:1.7}
+.welcome b{display:block;color:var(--text);font-size:20px;margin-bottom:6px}
+.cform{display:flex;gap:10px;padding:12px;border-top:1px solid var(--line);align-items:flex-end}
+.cform textarea{flex:1;resize:none;max-height:140px;min-height:44px;border-radius:22px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);font:inherit;font-size:14px;padding:12px 18px;outline:none;line-height:1.4}
+.cform textarea:focus{border-color:var(--p1);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
+.cform .btn{height:44px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* People chat */
+.uc{display:grid;grid-template-columns:310px 1fr;height:calc(100vh - 170px);min-height:480px;margin-bottom:30px;border-radius:var(--radius);overflow:hidden;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+.us{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+.me{padding:14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.me input,.add input{width:100%;height:38px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);font:inherit;font-size:13.5px;padding:0 14px;outline:none}
+.me input:focus,.add input:focus{border-color:var(--p1);box-shadow:0 0 0 3px rgba(139,92,246,.22)}
+.code{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.code>div{flex:1;min-width:110px}
+.code small{display:block;color:var(--muted);font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+.code b{font-size:17px;letter-spacing:.12em;font-variant-numeric:tabular-nums}
+.add{display:flex;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.clist{flex:1;overflow-y:auto;padding:8px}
+.ci{display:flex;align-items:center;gap:11px;padding:10px;border-radius:16px;cursor:pointer;border:1px solid transparent;transition:.15s;width:100%;background:none;color:var(--text);font:inherit;text-align:left}
+.ci:hover{background:rgba(255,255,255,.05)}
+.ci.on{background:rgba(139,92,246,.2);border-color:var(--line)}
+.av{position:relative;width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:800;font-size:16px;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
+.av i{position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;border-radius:50%;background:#6b6285;border:2px solid #120d22}
+.av i.on{background:#4ade80;box-shadow:0 0 8px #4ade80}
+.ci .tx{flex:1;min-width:0}
+.ci .tx b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci .tx span{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.ci .ub{min-width:20px;height:20px;border-radius:10px;padding:0 6px;background:#a78bfa;color:#1a1033;font-size:12px;font-weight:800;display:grid;place-items:center}
+.cnone{color:var(--muted);font-size:13px;line-height:1.6;text-align:center;padding:26px 14px}
+.ut{display:flex;flex-direction:column;min-width:0;min-height:0}
+.uth{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.uth .tx{flex:1;min-width:0}
+.uth .tx b{display:block;font-size:15px}
+.uth .tx span{font-size:12px;color:var(--muted)}
+.uth .back2{display:none}
+.umsgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:8px}
+.um{max-width:min(520px,82%);padding:9px 14px;border-radius:18px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;animation:rise .25s both}
+.um.me2{align-self:flex-end;background:linear-gradient(180deg,#8b5cf6,#6d28d9);box-shadow:inset 0 1px 0 rgba(255,255,255,.4);border-bottom-right-radius:6px}
+.um.them{align-self:flex-start;background:rgba(0,0,0,.35);border:1px solid var(--line);border-bottom-left-radius:6px}
+.um small{display:block;font-size:10.5px;opacity:.65;margin-top:3px;text-align:right}
+.udiv{align-self:center;font-size:11.5px;color:var(--muted);margin:6px 0}
+.uempty{margin:auto;text-align:center;color:var(--muted);font-size:14px;line-height:1.7;padding:20px}
+.uempty b{display:block;color:var(--text);font-size:20px;margin-bottom:6px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:200;background:rgba(20,14,40,.95);border:1px solid var(--line);color:var(--text);
+  padding:11px 18px;border-radius:999px;font-size:13.5px;box-shadow:0 12px 40px rgba(0,0,0,.6);max-width:90vw;animation:rise .25s both}
+@media (max-width:760px){
+  .uc{grid-template-columns:1fr;height:calc(100vh - 190px)}
+  .uc .ut{display:none}.uc.open .ut{display:flex}.uc.open .us{display:none}
+  .uth .back2{display:inline-flex}
+  .us{border-right:0}
+}
+
+/* Games */
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;padding-bottom:70px}
+.gt{border-radius:18px;padding:8px;background:var(--glass);border:1px solid var(--line);cursor:pointer;color:var(--text);font:inherit;text-align:left;
+  box-shadow:0 12px 34px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.16);transition:transform .2s,border-color .2s,box-shadow .2s}
+.gt:hover{transform:translateY(-4px);border-color:rgba(196,181,253,.6);box-shadow:0 18px 50px rgba(124,58,237,.4),inset 0 1px 0 rgba(255,255,255,.3)}
+.gt .art{height:96px;border-radius:12px}.gt .art img+.glyph{display:none}.gt .glyph{font-size:44px}
+.gt b{display:block;font-size:13.5px;padding:10px 4px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gmore{grid-column:1/-1;justify-self:center}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<header class="wrap">
+  <div class="bar">
+    <div class="logo" id="logo"><i>▲</i> U.H</div>
+    <button class="btn ghost sm back" id="back" style="display:none">← Home</button>
+    <label class="search" id="searchWrap" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search…" autocomplete="off">
+    </label>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view on" id="v-home">
+    <div class="home">
+      <span class="pill"><b></b> welcome</span>
+      <h1>U.H</h1>
+      <p>Pick where you want to go.</p>
+      <div class="tiles">
+        <button class="tile" data-go="links">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></div>
+          <b>Links</b><span id="nLinks"></span>
+        </button>
+        <button class="tile" data-go="movies">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="M10 9.2v5.6a.5.5 0 0 0 .76.43l4.6-2.8a.5.5 0 0 0 0-.86l-4.6-2.8a.5.5 0 0 0-.76.43z" fill="#fff"/></svg></div>
+          <b>Movies</b><span id="nMovies"></span>
+        </button>
+        <button class="tile" data-go="ai">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+          <b>AI</b><span>Ask anything</span>
+        </button>
+        <button class="tile" data-go="chat">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+          <b>Chat</b><span id="nChat">Talk to people</span>
+        </button>
+        <button class="tile" data-go="games">
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="15.5" cy="11.5" r=".8" fill="#fff"/><circle cx="18" cy="13.5" r=".8" fill="#fff"/></svg></div>
+          <b>Games</b><span id="nGames">Play in your browser</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-links">
+    <div class="page-title"><h2>Links</h2><span id="shownL"></span></div>
+    <div class="sites" id="gridL"></div>
+  </section>
+
+  <section class="view" id="v-movies">
+    <div class="page-title"><h2>Movies</h2><span id="shownM"></span></div>
+    <div class="sites" id="gridM"></div>
+  </section>
+  <section class="view" id="v-ai">
+    <div class="page-title"><h2>AI</h2><span>chat assistant</span></div>
+    <div class="chat">
+      <div class="chead">
+        <select id="model" aria-label="Model"></select>
+        <div class="sp"></div>
+        <button class="btn ghost sm" id="clear">New chat</button>
+      </div>
+      <div class="msgs" id="msgs"></div>
+      <div class="cform">
+        <textarea id="inp" rows="1" placeholder="Message the AI…  (Enter to send, Shift+Enter for new line)"></textarea>
+        <button class="btn" id="send">Send</button>
+      </div>
+    </div>
+  </section>
+  <section class="view" id="v-games">
+    <div class="page-title"><h2>Games</h2><span id="shownG"></span></div>
+    <div class="games" id="gridG"></div>
+  </section>
+
+  <section class="view" id="v-chat">
+    <div class="page-title"><h2>Chat</h2><span id="cstat">connecting…</span></div>
+    <div class="uc" id="uc">
+      <aside class="us">
+        <div class="me">
+          <input id="myname" maxlength="24" aria-label="Your display name" placeholder="Your name" autocomplete="off">
+          <div class="code">
+            <div><small>Your code</small><b id="mycode"></b></div>
+            <button class="btn ghost sm" id="cpcode" type="button">Copy</button>
+            <button class="btn ghost sm" id="cplink" type="button">Invite link</button>
+          </div>
+        </div>
+        <form class="add" id="addf">
+          <input id="addin" placeholder="Add a person by code or link" maxlength="200" autocomplete="off" aria-label="Friend's code">
+          <button class="btn sm" type="submit">Add</button>
+        </form>
+        <div class="clist" id="clist"></div>
+      </aside>
+      <div class="ut" id="ut"></div>
+    </div>
+  </section>
+</main>
+
+<footer>U.H</footer>
+
+<div class="player" id="player" role="dialog" aria-label="Game">
+  <div class="ptop"><h4 id="pt"></h4>
+    <button class="btn ghost sm" id="pfs" type="button">Fullscreen</button>
+    <button class="btn sm" id="pclose" type="button">✕ Close</button></div>
+  <div class="stage">
+    <div class="note" id="note"><div><h3>Game files not found</h3>
+      <p>This game is listed, but its file isn’t on your site yet. Upload it to:</p><code id="pcode"></code></div></div>
+    <iframe id="pf" title="Game" allow="fullscreen; gamepad; autoplay" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+/* ===== EDIT HERE =====
+   Proxies: put the image in the images/ folder and set img to its path.
+   Movies: add items like {title:'Name', desc:'About it', url:'https://...', img:'images/name.jpg'} */
+const PROXIES = [
+  {name:'Lunar Proxy', glyph:'L', c:['#312e81','#8b5cf6'], img:'images/lunar-proxy.png', links:[
+    'https://smartbio.2660010.com/','https://growth.hjshop.net/','https://studying.nigelupchurch.com/',
+    'https://not.eglobaltravelmedia.asia/','https://lunar.drciocan.ro/','https://new.airlinemeals.net/']},
+  {name:'Tung Tung Proxy', glyph:'TT', c:['#4c1d95','#c026d3'], img:'images/tung-tung-proxy.png', links:[
+    'https://cipher.2660010.com/','https://albin.tabulasync.com/','https://ok.eglobaltravelmedia.asia/',
+    'https://tt.drciocan.ro/','https://land.airlinemeals.net/','https://auto.avtohisasnoj.si/']},
+  {name:'Mizu Proxy', glyph:'M', c:['#1e1b4b','#7c3aed'], img:'images/mizu-proxy.png', links:[
+    'https://lesson.sammgalati.ro/','https://calc.cyclopsproject.eu/','https://lesson.firstnewzion.com/',
+    'https://calc.exerciseandmind.com/','https://algebra.kulicki.com/','https://english.easyesale.com/',
+    'https://test.sgestioninmobiliaria.cl/']}
+];
+const MOVIES = [];
+
+/* AI settings. WARNING: a key in front-end code is visible to anyone who opens the site. */
+const AI_KEY = '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';
+const AI_MODELS = [
+  ['openrouter/auto','Auto (best available)'],
+  ['openai/gpt-4o-mini','GPT-4o mini'],
+  ['anthropic/claude-3.5-haiku','Claude 3.5 Haiku'],
+  ['google/gemini-2.0-flash-001','Gemini 2.0 Flash'],
+  ['meta-llama/llama-3.3-70b-instruct','Llama 3.3 70B']
+];
+/* ===================== */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const host = u => { try{return new URL(u).hostname}catch(e){return u} };
+const EXT='<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+let view='home', query='';
+
+function art(o){
+  return `<div class="art" style="background:radial-gradient(circle at 30% 20%,${o.c[1]},${o.c[0]} 75%)">
+    ${o.img?`<img src="${esc(o.img)}" alt="" onerror="this.remove()">`:''}
+    <span class="glyph">${esc(o.glyph)}</span></div>`;
+}
+function renderLinks(){
+  const list = PROXIES.map(p=>({...p, links:p.links.filter(l=>(p.name+' '+l).toLowerCase().includes(query))})).filter(p=>p.links.length);
+  const total = list.reduce((n,p)=>n+p.links.length,0);
+  $('#shownL').textContent = total+' links · '+list.length+' proxies';
+  $('#gridL').innerHTML = list.length ? list.map((p,i)=>`
+    <article class="card" style="animation-delay:${i*70}ms">${art(p)}
+      <div class="info"><h3>${esc(p.name)}</h3>
+        <div class="lk">${p.links.map((l,n)=>`<a href="${esc(l)}" target="_blank" rel="noopener"><span>${esc(host(l))}</span>${EXT}</a>`).join('')}</div>
+      </div></article>`).join('') : '<div class="empty">No links match your search.</div>';
+}
+function renderMovies(){
+  const list = MOVIES.filter(m=>(m.title+' '+(m.desc||'')).toLowerCase().includes(query));
+  $('#shownM').textContent = list.length+(list.length===1?' movie':' movies');
+  $('#gridM').innerHTML = list.length ? list.map((m,i)=>`
+    <article class="card" style="animation-delay:${i*70}ms">${art({c:['#2b2540','#8b5cf6'],glyph:m.title[0]||'▶',img:m.img})}
+      <div class="info"><h3>${esc(m.title)}</h3>${m.desc?`<p style="margin:-6px 0 12px">${esc(m.desc)}</p>`:''}
+        <div class="lk"><a href="${esc(m.url)}" target="_blank" rel="noopener"><span>Watch</span>${EXT}</a></div></div></article>`).join('')
+    : `<div class="empty">${MOVIES.length?'No movies match your search.':'No movies yet. Add some to the MOVIES list in index.html.'}</div>`;
+}
+function go(v, push=true){
+  view = v; query=''; $('#q').value='';
+  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on', x.id==='v-'+v));
+  $('#back').style.display = v==='home'?'none':''; $('#searchWrap').style.display = (v==='links'||v==='movies'||v==='games')?'':'none';
+  if(v==='links') renderLinks(); if(v==='movies') renderMovies(); if(v==='ai') setTimeout(()=>$('#inp').focus(),50); if(v==='chat') chatShown(); if(v==='games') loadGames();
+  if(push) history.pushState(null,'',v==='home'?location.pathname:'#'+v);
+  scrollTo(0,0);
+}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+$('#back').addEventListener('click',()=>go('home'));
+$('#logo').addEventListener('click',()=>go('home'));
+$('#q').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase(); gShown=60; view==='links'?renderLinks():view==='games'?renderGames():renderMovies()});
+addEventListener('popstate',()=>go(['links','movies','ai','chat','games'].includes(location.hash.slice(1))?location.hash.slice(1):'home',false));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#player').classList.contains('open')){closeGame();return}
+  if(e.key==='Escape'&&view!=='home'&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName))go('home')});
+
+$('#nLinks').textContent = PROXIES.reduce((n,p)=>n+p.links.length,0)+' links';
+$('#nMovies').textContent = MOVIES.length+' movies';
+/* ===== AI chat ===== */
+const SYSTEM='You are a helpful, concise AI assistant inside the U.H website.';
+let chat=[], busy=false;
+$('#model').innerHTML=AI_MODELS.map(m=>`<option value="${m[0]}">${m[1]}</option>`).join('');
+const msgs=$('#msgs');
+function welcome(){msgs.innerHTML='<div class="welcome"><b>What can I help with?</b>Ask a question, get homework help, write something, or just chat.</div>'}
+function fmt(t){
+  let h=esc(t);
+  h=h.replace(/```(?:\w+)?\n?([\s\S]*?)```/g,(_,c)=>'<pre><code>'+c.replace(/\n$/,'')+'</code></pre>');
+  h=h.replace(/`([^`\n]+)`/g,'<code>$1</code>').replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>');
+  return h;
+}
+function addMsg(cls,html){
+  const w=msgs.querySelector('.welcome'); if(w) w.remove();
+  const d=document.createElement('div'); d.className='msg '+cls; d.innerHTML=html; msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight; return d;
+}
+async function sendMsg(){
+  const text=$('#inp').value.trim(); if(!text||busy) return;
+  busy=true; $('#send').disabled=true; $('#inp').value=''; $('#inp').style.height='';
+  chat.push({role:'user',content:text});
+  addMsg('user',esc(text));
+  const bub=addMsg('ai','<span class="dots"><i></i><i></i><i></i></span>');
+  let out='';
+  try{
+    const r=await fetch('https://openrouter.ai/api/v1/chat/completions',{
+      method:'POST',
+      headers:{'Authorization':'Bearer '+AI_KEY,'Content-Type':'application/json','HTTP-Referer':location.origin||'https://localhost','X-Title':'U.H'},
+      body:JSON.stringify({model:$('#model').value,stream:true,messages:[{role:'system',content:SYSTEM},...chat.slice(-30)]})
+    });
+    if(!r.ok){
+      let m=''; try{const j=await r.json(); m=(j.error&&j.error.message)||''}catch(e){}
+      throw new Error((m||'Request failed')+' (HTTP '+r.status+')');
+    }
+    const rd=r.body.getReader(), dec=new TextDecoder(); let buf='';
+    for(;;){
+      const {done,value}=await rd.read(); if(done) break;
+      buf+=dec.decode(value,{stream:true});
+      const lines=buf.split('\n'); buf=lines.pop();
+      for(const ln of lines){
+        const l=ln.trim(); if(!l.startsWith('data:')) continue;
+        const d=l.slice(5).trim(); if(d==='[DONE]') continue;
+        try{
+          const j=JSON.parse(d);
+          if(j.error) throw new Error(j.error.message||'Model error');
+          const c=j.choices&&j.choices[0]&&j.choices[0].delta&&j.choices[0].delta.content;
+          if(c){out+=c; bub.innerHTML=fmt(out); msgs.scrollTop=msgs.scrollHeight}
+        }catch(e){ if(e.message&&!(e instanceof SyntaxError)) throw e }
+      }
+    }
+    if(!out) throw new Error('The model returned an empty reply. Try again or pick another model.');
+    chat.push({role:'assistant',content:out});
+  }catch(e){
+    chat.pop();
+    bub.className='msg err'; bub.textContent='Something went wrong: '+e.message;
+  }
+  busy=false; $('#send').disabled=false; $('#inp').focus();
+}
+$('#send').addEventListener('click',sendMsg);
+$('#inp').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg()}});
+$('#inp').addEventListener('input',e=>{const t=e.target;t.style.height='auto';t.style.height=Math.min(t.scrollHeight,140)+'px'});
+$('#clear').addEventListener('click',()=>{if(busy) return; chat=[]; welcome()});
+welcome();
+
+
+/* ===== People chat (peer-to-peer over WebRTC via PeerJS; no server stores messages) ===== */
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const ALPHA='ABCDEFGHJKLMNPQRSTUVWXYZ23456789', PFX='uhchat-', CODE_RE=/[A-HJ-NP-Z2-9]{8}/;
+const genCode=()=>Array.from(crypto.getRandomValues(new Uint8Array(8)),b=>ALPHA[b%32]).join('');
+const genId=()=>Array.from(crypto.getRandomValues(new Uint8Array(8)),b=>b.toString(16).padStart(2,'0')).join('');
+let me=LS.get('uh.me',null); if(!me||!me.code){me={code:genCode(),name:''}}
+if(!me.name) me.name='Guest '+me.code.slice(0,4);
+LS.set('uh.me',me);
+let contacts=LS.get('uh.contacts',{}), thread=LS.get('uh.msgs',{}), blocked=LS.get('uh.blocked',[]);
+let peer=null, peerOpen=false, conns={}, unread={}, active=null, lastAdd=null, toastT;
+const save=()=>{LS.set('uh.contacts',contacts);LS.set('uh.msgs',thread);LS.set('uh.blocked',blocked)};
+const isOn=c=>!!(conns[c]&&[...conns[c]].some(x=>x.open));
+function toast(t){let d=$('#toast');if(!d){d=document.createElement('div');d.id='toast';d.className='toast';document.body.appendChild(d)}
+  d.textContent=t;d.style.display='';clearTimeout(toastT);toastT=setTimeout(()=>d.style.display='none',3800)}
+function setStatus(t){$('#cstat').textContent=t}
+function hue(c){let h=0;for(const ch of c)h=(h*31+ch.charCodeAt(0))%90;return 240+h}
+function avatar(c,name){return `<div class="av" style="background:linear-gradient(160deg,hsl(${hue(c)} 80% 68%),hsl(${hue(c)} 65% 42%))">${esc((name||'?').trim()[0]||'?').toUpperCase()}<i class="${isOn(c)?'on':''}"></i></div>`}
+const hm=t=>new Date(t).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
+const dayLbl=t=>{const d=new Date(t),n=new Date();return d.toDateString()===n.toDateString()?'Today':d.toLocaleDateString([],{weekday:'short',month:'short',day:'numeric'})};
+
+function startPeer(){
+  setStatus('connecting…');
+  try{ peer=new Peer(PFX+me.code) }catch(e){ setStatus('chat unavailable'); return }
+  peer.on('open',()=>{peerOpen=true;setStatus('online');Object.keys(contacts).forEach(connectTo);renderSide();renderThread()});
+  peer.on('connection',c=>wire(c));
+  peer.on('disconnected',()=>{peerOpen=false;setStatus('reconnecting…');setTimeout(()=>{try{peer.reconnect()}catch(e){}},2500)});
+  peer.on('close',()=>{peerOpen=false;setStatus('offline');setTimeout(startPeer,4000)});
+  peer.on('error',err=>{
+    if(err.type==='peer-unavailable'){
+      const m=(String(err.message).match(/uhchat-([A-Z0-9]+)/)||[])[1];
+      if(m&&m===lastAdd){toast('Couldn’t reach '+m+'. They need to have U.H open — double-check the code.');lastAdd=null}
+    }else if(err.type==='unavailable-id'){
+      setStatus('open in another tab');toast('Chat is already open in another tab or device with this code.');
+    }else if(['network','server-error','socket-error','socket-closed'].includes(err.type)){
+      peerOpen=false;setStatus('offline — retrying…');
+    }
+  });
+}
+function connectTo(code){
+  if(!peer||!peerOpen||isOn(code)||blocked.includes(code)) return;
+  try{ wire(peer.connect(PFX+code,{reliable:true})) }catch(e){}
+}
+function wire(c){
+  const code=String(c.peer).slice(PFX.length);
+  (conns[code]=conns[code]||new Set()).add(c);
+  c.on('open',()=>{
+    if(blocked.includes(code)){c.close();return}
+    c.send({t:'hello',name:me.name});
+    if(lastAdd===code)lastAdd=null;
+    flush(code);renderSide();renderThread();
+  });
+  c.on('data',d=>onData(code,d));
+  const gone=()=>{conns[code]&&conns[code].delete(c);renderSide();renderThread()};
+  c.on('close',gone);c.on('error',gone);
+}
+function ensureContact(code,name){
+  if(!contacts[code]){contacts[code]={name:name||code};thread[code]=thread[code]||[];save();return true}
+  if(name&&contacts[code].name!==name){contacts[code].name=name;save()}
+  return false;
+}
+function onData(code,d){
+  if(!d||typeof d!=='object'||blocked.includes(code)) return;
+  if(d.t==='hello'){
+    const nm=String(d.name||'').slice(0,24).trim()||code;
+    if(ensureContact(code,nm)) toast(nm+' added you');
+    flush(code);renderSide();renderThread();
+  }else if(d.t==='msg'&&typeof d.text==='string'&&typeof d.id==='string'){
+    ensureContact(code);
+    const list=thread[code]=thread[code]||[];
+    if(!list.some(m=>m.id===d.id)){
+      list.push({id:d.id.slice(0,32),from:'them',text:d.text.slice(0,4000),ts:Date.now()});
+      if(list.length>500)list.splice(0,list.length-500);
+      save();
+      if(!(view==='chat'&&active===code&&!document.hidden))unread[code]=(unread[code]||0)+1;
+      updTitle();
+    }
+    send1(code,{t:'ack',id:d.id});
+    renderSide();if(active===code)renderMsgs();
+  }else if(d.t==='ack'){
+    const m=(thread[code]||[]).find(x=>x.id===d.id);if(m&&!m.ok){m.ok=true;save();if(active===code)renderMsgs()}
+  }
+}
+function send1(code,obj){for(const c of (conns[code]||[])){if(c.open){try{c.send(obj);return true}catch(e){}}}return false}
+function flush(code){(thread[code]||[]).filter(m=>m.from==='me'&&!m.ok).forEach(m=>send1(code,{t:'msg',id:m.id,text:m.text}))}
+function sendText(code,text){
+  const m={id:genId(),from:'me',text,ts:Date.now(),ok:false};
+  (thread[code]=thread[code]||[]).push(m);
+  if(thread[code].length>500)thread[code].splice(0,thread[code].length-500);
+  save();
+  if(!send1(code,{t:'msg',id:m.id,text})) connectTo(code);
+  renderSide();renderMsgs();
+}
+function addPerson(raw){
+  const code=(String(raw).toUpperCase().match(CODE_RE)||[])[0];
+  if(!code){toast('That doesn’t look like a valid code (8 letters/numbers).');return false}
+  if(code===me.code){toast('That’s your own code — share it with a friend instead.');return false}
+  blocked=blocked.filter(x=>x!==code);
+  const isNew=ensureContact(code);save();
+  lastAdd=code;connectTo(code);openThread(code);
+  toast(isNew?'Added. Waiting for them to come online…':'Already in your list.');
+  return true;
+}
+function removePerson(code){
+  const nm=contacts[code]?contacts[code].name:code;
+  if(!confirm('Remove '+nm+' and delete this conversation?\nThey won’t be able to message you again unless you add them back.')) return;
+  (conns[code]||[]).forEach(c=>{try{c.close()}catch(e){}});
+  delete conns[code];delete contacts[code];delete thread[code];delete unread[code];
+  if(!blocked.includes(code))blocked.push(code);
+  save();if(active===code)active=null;renderAll();updTitle();
+}
+function updTitle(){const n=Object.values(unread).reduce((a,b)=>a+b,0);document.title=(n?'('+n+') ':'')+'U.H';
+  $('#nChat').textContent=n?n+' new message'+(n>1?'s':''):'Talk to people'}
+
+/* ---- chat UI ---- */
+function lastMsg(c){const l=thread[c]||[];return l[l.length-1]}
+function renderSide(){
+  const ids=Object.keys(contacts).sort((a,b)=>((lastMsg(b)||{}).ts||0)-((lastMsg(a)||{}).ts||0));
+  $('#clist').innerHTML=ids.length?ids.map(c=>{
+    const lm=lastMsg(c),u=unread[c]||0;
+    return `<button class="ci ${c===active?'on':''}" data-c="${c}">${avatar(c,contacts[c].name)}
+      <div class="tx"><b>${esc(contacts[c].name)}</b><span>${lm?esc((lm.from==='me'?'You: ':'')+lm.text):(isOn(c)?'online':'offline')}</span></div>
+      ${u?`<div class="ub">${u}</div>`:''}</button>`}).join('')
+    :'<div class="cnone">No one here yet.<br>Share your code (or invite link) with a friend, or paste theirs above to add them.</div>';
+}
+function renderThread(){
+  const ut=$('#ut');
+  if(!active||!contacts[active]){
+    ut.innerHTML='<div class="uempty"><div><b>Start a conversation</b>Add someone with their code, then pick them from the list.<br>Messages go directly between your browsers, so you both need U.H open to chat live.</div></div>';
+    $('#uc').classList.remove('open');return;
+  }
+  const c=contacts[active];
+  ut.innerHTML=`<div class="uth"><button class="btn ghost sm back2" id="ub" type="button">←</button>${avatar(active,c.name)}
+    <div class="tx"><b>${esc(c.name)}</b><span>${isOn(active)?'online':'offline — messages send when they’re back'} · ${active}</span></div>
+    <button class="btn ghost sm" id="urm" type="button">Remove</button></div>
+    <div class="umsgs" id="umsgs"></div>
+    <form class="cform" id="uform"><textarea id="cinp" rows="1" maxlength="4000" placeholder="Message ${esc(c.name)}…" aria-label="Message"></textarea><button class="btn" type="submit">Send</button></form>`;
+  $('#ub').onclick=()=>{active=null;renderAll()};
+  $('#urm').onclick=()=>removePerson(active);
+  const ta=$('#cinp');
+  $('#uform').onsubmit=e=>{e.preventDefault();const t=ta.value.trim();if(!t)return;ta.value='';ta.style.height='';sendText(active,t)};
+  ta.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();$('#uform').requestSubmit()}};
+  ta.oninput=()=>{ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,140)+'px'};
+  $('#uc').classList.add('open');
+  renderMsgs();
+}
+function renderMsgs(){
+  const box=$('#umsgs');if(!box||!active)return;
+  const list=thread[active]||[];let day='',h='';
+  if(!list.length)h=`<div class="uempty"><div>Say hi to ${esc(contacts[active].name)} 👋</div></div>`;
+  for(const m of list){
+    const d=dayLbl(m.ts);if(d!==day){day=d;h+=`<div class="udiv">${esc(d)}</div>`}
+    h+=`<div class="um ${m.from==='me'?'me2':'them'}">${esc(m.text)}<small>${hm(m.ts)}${m.from==='me'?(m.ok?' · delivered':' · sending…'):''}</small></div>`;
+  }
+  box.innerHTML=h;box.scrollTop=box.scrollHeight;
+}
+function renderAll(){renderSide();renderThread()}
+function openThread(c){active=c;unread[c]=0;updTitle();renderAll();setTimeout(()=>{const t=$('#cinp');if(t)t.focus()},50)}
+function chatShown(){if(active)unread[active]=0;updTitle();renderAll()}
+
+$('#mycode').textContent=me.code;
+$('#myname').value=me.name;
+$('#myname').addEventListener('change',e=>{
+  me.name=e.target.value.trim().slice(0,24)||'Guest '+me.code.slice(0,4);e.target.value=me.name;LS.set('uh.me',me);
+  Object.keys(conns).forEach(c=>send1(c,{t:'hello',name:me.name}));
+});
+const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{prompt('Copy this:',t)})};
+$('#cpcode').addEventListener('click',()=>copy(me.code,'Code copied'));
+$('#cplink').addEventListener('click',()=>copy(location.origin+location.pathname+'#chat='+me.code,'Invite link copied'));
+$('#addf').addEventListener('submit',e=>{e.preventDefault();if(addPerson($('#addin').value))$('#addin').value=''});
+$('#clist').addEventListener('click',e=>{const b=e.target.closest('.ci');if(b)openThread(b.dataset.c)});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&view==='chat')chatShown()});
+setInterval(()=>{if(peerOpen)Object.keys(contacts).forEach(c=>{connectTo(c)})},15000);
+addEventListener('online',()=>{if(!peerOpen&&peer&&!peer.destroyed)try{peer.reconnect()}catch(e){}});
+updTitle();renderAll();startPeer();
+
+/* ===== Games (list comes from games.json; game files live in ugs/) ===== */
+let GAMES=[], gamesLoaded=false, gShown=60;
+const GAMES_BUILTIN=[["1","truffled/1/index.html","covers/1.webp"],["1 on 1 Soccer","truffled/1on1soccer/index.html",""],["10 Minutes Till Dawn","truffled/10minutestilldawn/index.html","covers/10.webp"],["1v1.lol","truffled/1v1lol/1v1.html","covers/1v1.webp"],["20 Minutes Till Dawn","truffled/20minutestilldawn/index.html",""],["2048","truffled/2048/index.html","covers/2048.webp"],["-3","truffled/3/index.html","covers/3.webp"],["30","truffled/30/index.html","covers/30.webp"],["A Difficult Game About Climbing","truffled/adifficultgameaboutclimbingwebport/adgac.html","covers/adgac.webp"],["A Game About Feeding A Blackhole","truffled/agameaboutfeedingablackhole/blackhole.html","covers/blackhole.webp"],["A Small World Cup","truffled/asmallworldcup/aswc.html","covers/worldcup.webp"],["Academytale","truffled/academytalewebport/index.html","covers/academytale.webp"],["Achievement Unlocked","truffled/achievementunlocked/index.html","covers/achieve.webp"],["ADOFAI","truffled/adofai/index.html","covers/adofai.webp"],["Adventure Capitalist","truffled/adventurecapitalist/index.html","covers/adventure.webp"],["Amanda the adventurer","truffled/amandatheadventurerwebport/index.html","covers/aman.webp"],["Amaze","truffled/amaze/index.html","covers/amaze.webp"],["Among us","truffled/amongus/index.html","covers/among.webp"],["Angry Birds","truffled/angrybirds/Angrybirds.html","covers/angry.webp"],["Angry Birds Epic","truffled/angrybirdsepicwebport/index.html","covers/epic.webp"],["Angry Birds Online","truffled/angrybirdsonline/angrybirdsonline.html","covers/angrybirdsonline.webp"],["Animal Crossing Population: Growing!","truffled/animalcrossingpopulationgrowingwebport/index.html",""],["Animal Crossing Wild World","truffled/animalcrossingwildworld/acww.html",""],["Antonblast","truffled/antonblast/anton.html","covers/anton.webp"],["Apes Vs Helium","truffled/apesvsheliumwebport/index.html","covers/avh.webp"],["Arthur's Nightmare","truffled/arthursnightmarewebport/arthur.html","covers/arthursnight.webp"],["-b","truffled/b/index.html",""],["Bad Icecream 1","truffled/badicecream1/badice1.html","covers/badice1.webp"],["Bad Icecream 2","truffled/badicecream2/badice2.html","covers/badice2.webp"],["Bad Icecream 3","truffled/badicecream3/badice3.html","covers/badice3.webp"],["Bad Parenting","truffled/badparentingwebport/index.html","covers/bad.webp"],["Bad Piggies","truffled/badpiggies/piggies.html","covers/badp.webp"],["Bad time Simulator","truffled/badtimesimulator/index.html","covers/badt.webp"],["Balatro","truffled/balatrowebport/index.html","covers/bal.webp"],["Baldi's Basics","truffled/baldisbasics/index.html","covers/baldi.webp"],["Baldi's Basics Birthday Bash","truffled/baldisbasicsbirthdaybashwebport/index.html","covers/bday.webp"],["Baldi's Basics Classic Remastered","truffled/baldisbasicsclassicremasteredwebport/index.html","covers/baldire.webp"],["Baldi's Basics Plus","truffled/baldisbasicspluswebport/bbp.html","covers/baldiplus.webp"],["Baldi's Basics Ultra Decompile","truffled/baldisbasicsultradecompile/baldidecomp.html",""],["Baldi's Fun New School Plus Ultimate Edition","truffled/baldisfunnewschoolplusultimateedition/index.html",""],["Baldurs Gate 2","truffled/baldursgate2webport/index.html","covers/gate2.webp"],["Banjo Kazooie","truffled/banjokazooie/banjokazooie.html","covers/banjokazooie.webp"],["Bart Bash","truffled/bartbash/bartbash.html","covers/bartbash.webp"],["Bart Blast","truffled/bartblast/bart.html","covers/bart.webp"],["Baseball Bros","truffled/baseballbros/index.html","covers/basebros.webp"],["Basket Bros","truffled/basketbros/basket.html","covers/basket.webp"],["Basket Random","truffled/basketrandom/index.html",""],["Basketball stars","truffled/basketballstars/index.html","covers/basketstars.webp"],["Beatblock","truffled/beatblockwebport/index.html","covers/beatblock.webp"],["Bee Movie Game","truffled/beemoviegame/index.html",""],["Bendy And The Ink Machine","truffled/bendyandtheinkmachinewebport/index.html","covers/bendy.webp"],["Bergentruck","truffled/bergentruckwebport/index.html","covers/ber.webp"],["Bfdia 5b","truffled/bfdia5b/index.html","covers/bfdia5b.webp"],["Bitlife","truffled/bitlife/index.html","covers/bit.webp"],["Black Jack","truffled/blackjack/BlackJack.html","covers/blackjack.webp"],["Block Blast","truffled/blockblast/index.html",""],["Bloodmoney","truffled/bloodmoneywebport/index.html","covers/blood.webp"],["Bloon TD1","truffled/bloontd1/index.html",""],["Bloon TD2","truffled/bloontd2/index.html","covers/blo2.webp"],["Bloon TD3","truffled/bloontd3/index.html","covers/blo3.webp"],["Bloon TD4","truffled/bloontd4/bloonstd4.html","covers/btd4.webp"],["Bloons TD5","truffled/bloonstd5/index.html","covers/blo5.webp"],["Bloons TD6","truffled/bloonstd6/index.html","covers/blo6.webp"],["Bloxors","truffled/bloxors/index.html","covers/bloxorz.webp"],["Bombmerman","truffled/bombmerman/bomberman.html","covers/bomberman.webp"],["Bombmerman 2","truffled/bombmerman2/bomberman2.html","covers/bomberman2.webp"],["Boxing Random","truffled/boxingrandom/boxing.html","covers/boxing.webp"],["Brotato Paws And Claws","truffled/brotatopawsandclawswebport/index.html","covers/paws.webp"],["Buckshot Roulette","truffled/buckshotroulettewebport/index.html","covers/buck.webp"],["Burrito Bison","truffled/burritobison/index.html","covers/burrito.webp"],["Burrito Bison Revenge","truffled/burritobisonrevenge/bbe.html","covers/bbe.webp"],["Capuchin","truffled/capuchinwebport/index.html","covers/capuchin.webp"],["CaseOhs Basics in Eating and Fast Food","truffled/caseohsbasicsineatingandfastfoodwebport/caseoh.html","covers/caseoh.webp"],["Celeste","truffled/celestewebport/index.html","covers/celeste.webp"],["Cheese Rolling","truffled/cheeserollingwebport/cheese.html","covers/cheese.webp"],["Christmas Massacre","truffled/christmasmassacrewebport/christmas.html","covers/christmas.webp"],["Class Of 09 Flipside","truffled/classof09flipsidewebport/index.html","covers/flip.webp"],["Class Of 09 Re-Up","truffled/classof09reupwebport/index.html","covers/reup.webp"],["Class Of 09","truffled/classof09webport/index.html","covers/class.webp"],["Clover Pit","truffled/cloverpit/cloverpit.html","covers/clover.webp"],["Cluster Rush","truffled/clusterrush/index.html","covers/cluster.webp"],["Coffee Talk","truffled/coffeetalk/index.html","covers/coffee.webp"],["Cookie Clicker","truffled/cookieclicker/index.html","covers/cookie.webp"],["Cooking Mama","truffled/cookingmama/cookingmama.html","covers/cookingmama.webp"],["Cooking Mama 2","truffled/cookingmama2/cookingmama2.html","covers/cookingmama2.webp"],["Cooking Mama 3","truffled/cookingmama3/cookingmama3.html","covers/cookingmama3.webp"],["Counter Stike 0.8","truffled/counterstike08/index.html","covers/cs08.webp"],["Crash Bandicoot 1","truffled/crashbandicoot1/crash1.html","covers/crash1.webp"],["Crash Bandicoot 2","truffled/crashbandicoot2/crash2.html","covers/crash2.webp"],["Crash Bandicoot 3","truffled/crashbandicoot3/crash3.html","covers/crash3.webp"],["Crazy Balls","truffled/crazyballs/balls.html","covers/balls.webp"],["CrazyCattle3D","truffled/crazycattle3dwebport/index.html","covers/crazyca.webp"],["Crossy Roads","truffled/crossyroads/crossy.html","covers/crossy.webp"],["Cruelty Squad","truffled/crueltysquadwebport/index.html","covers/cruelty.webp"],["Csgo Clicker","truffled/csgoclicker/index.html","covers/csgo.webp"],["Cuphead","truffled/cupheadwebport/index.html","covers/cup.webp"],["Customer Support","truffled/customersupportwebport/index.html","covers/custom.webp"],["Cut The Rope","truffled/cuttherope/cut.html","covers/cut1.webp"],["Cut The Rope : Time Travel","truffled/cuttheropetimetravel/time.html","covers/time.webp"],["Cut The Rope Holiday","truffled/cuttheropeholiday/hol.html","covers/cut2.webp"],["Dadish","truffled/dadish/dadish.html","covers/dadish.webp"],["Dadish 2","truffled/dadish2/dadish2.html","covers/dadish2.webp"],["Dadish 3","truffled/dadish3/dadish3.html","covers/dadish3.webp"],["Dadish 3d","truffled/dadish3d/dadish3d.html","covers/dadish3d.webp"],["Dadish Daily","truffled/dadishdaily/daily.html","covers/daily.webp"],["Danganronpa","truffled/danganronpa/index.html","covers/dan.webp"],["DEAD PLATE","truffled/deadplatewebport/dead.html","covers/deadp.webp"],["Dead Tapes","truffled/deadtapes/index.html","covers/deadta.webp"],["Deadseat","truffled/deadseatwebport/index.html","covers/deadseat.webp"],["Death Run 3D","truffled/deathrun3d/index.html","covers/death.webp"],["Deltarune","truffled/deltarunewebport/index.html","covers/deltarune.webp"],["Deltatraveler","truffled/deltatravelerwebport/deltatr.html","covers/deltatr.webp"],["Diablo","truffled/diablo/index.html","covers/diablo.webp"],["Dice A Million","truffled/diceamillionwebport/diceamillion.html","covers/diceamillion.webp"],["Dinosaur","truffled/dinosaur/index.html","covers/dino.webp"],["Do Not Take This Cat Home","truffled/donottakethiscathomewebport/index.html","covers/dont.webp"],["Doge Miner","truffled/dogeminer/Doge Miner.html","covers/doge.webp"],["Doge Miner 2","truffled/dogeminer2/dm2.html","covers/dogeminer2.webp"],["Dome Keeper","truffled/domekeeperwebport/index.html","covers/domekeeper.webp"],["Doodle Jump","truffled/doodlejump/Doodle Jump.html","covers/doodle.webp"],["Doom","truffled/doom/index.html","covers/doom.webp"],["Doom 2","truffled/doom2/doom2.html","covers/doom2.webp"],["Doom 3","truffled/doom3/index.html","covers/doom3.webp"],["Doom 64","truffled/doom64/doom64.html","covers/doom64.webp"],["Dr. Mario","truffled/drmario/drmario.html","covers/drmario.webp"],["Dreadhead Parkour","truffled/dreadheadparkour/dread.html","covers/dread.webp"],["Drift Boss","truffled/driftboss/index.html","covers/driftboss.webp"],["Drift Hunter","truffled/drifthunter/drift.html","covers/hunt.webp"],["Drive Mad","truffled/drivemad/index.html","covers/drive.webp"],["Duck Life 1","truffled/ducklife1/index.html","covers/duck1.webp"],["Duck Life 2","truffled/ducklife2/index.html","covers/duck2.webp"],["Duck Life 3","truffled/ducklife3/index.html","covers/duck3.webp"],["Duck Life 4","truffled/ducklife4/index.html","covers/duck4.webp"],["Duck Life 5","truffled/ducklife5/index.html","covers/duck5.webp"],["Duck Life 6","truffled/ducklife6/index.html","covers/ducklife6.webp"],["Duck Life 7","truffled/ducklife7/index.html","covers/ducklife7.webp"],["Duck Life 8","truffled/ducklife8webport/index.html",""],["Dumb Ways To Die","truffled/dumbwaystodie/index.html","covers/dumb.webp"],["Eggy Car","truffled/eggycar/eggycar.html","covers/eggycar.webp"],["Escape Road","truffled/escaperoad/escape.html","covers/road.webp"],["Escape Road 2","truffled/escaperoad2/road2.html","covers/escape2.webp"],["Escape Road 3","truffled/escaperoad3/escape3.html",""],["Escape Road City 2","truffled/escaperoadcity2/roadcity2.html","covers/roadcity.webp"],["Falling Fred","truffled/fallingfred/index.html","covers/super-falling-fred.webp"],["Fallout","truffled/fallout/falloutt.html","covers/fallout.webp"],["Fallout 2","truffled/fallout2webport/index.html","covers/fallout2.webp"],["Fancy Pants Adventures","truffled/fancypantsadventures/index.html","covers/fpa1.webp"],["Fancy Pants Adventures 2","truffled/fancypantsadventures2/index.html","covers/fancy2.webp"],["Fancy Pants Adventures 3","truffled/fancypantsadventures3/fpa3.html","covers/fpa3.webp"],["Fears To Fathom: Home Alone","truffled/fearstofathomhomealonewebport/index.html","covers/fear.webp"],["FEZ","truffled/fezwebport/index.html",""],["Final Fantasy VII","truffled/finalfantasyvii/ffvii.html","covers/ffvii.webp"],["Fireboy and Watergirl","truffled/fireboyandwatergirl/index.html","covers/fire1.webp"],["Fireboy and Watergirl 2","truffled/fireboyandwatergirl2/index.html","covers/fire2.webp"],["Fireboy and Watergirl 3","truffled/fireboyandwatergirl3/index.html","covers/fire3.webp"],["Fireboy and Watergirl 4","truffled/fireboyandwatergirl4/index.html","covers/fire4.webp"],["FISH","truffled/fishwebport/fish.html","covers/fish.webp"],["Five Nights At Candys","truffled/fivenightsatcandys/fnac.html","covers/fnac.webp"],["Five Nights At Candys 2","truffled/fivenightsatcandys2/fnac2.html","covers/fnac2.webp"],["Five Nights At Epsteins","truffled/fivenightsatepsteinswebport/fnae.html","covers/fnae.webp"],["Five Nights At Frickbears 3","truffled/fivenightsatfrickbears3webport/index.html",""],["Five Nights At Last Breath","truffled/fivenightsatlastbreathwebport/breath.html","covers/breath.webp"],["Flappy bird","truffled/flappybird/index.html","covers/flapp.webp"],["Flying Gorilla","truffled/flyinggorillawebport/gorilla.html","covers/flying.webp"],["FNAF","truffled/fnaf/index.html",""],["FNAF Sisters Location","truffled/fnafsisterslocation/fnafs.html","covers/sister.webp"],["FNAF Ultimate Custom Night","truffled/fnafultimatecustomnight/fnafu.html",""],["FNAF World","truffled/fnafworld/fnafw.html","covers/fnafworld.webp"],["FNAF World Refreshed","truffled/fnafworldrefreshed/index.html","covers/fnafworld.webp"],["FNAF2","truffled/fnaf2/index.html","covers/fnaf2.webp"],["FNAF3","truffled/fnaf3/index.html",""],["FNAF4","truffled/fnaf4/index.html","covers/fnaf4.webp"],["FNAF4 Halloween","truffled/fnaf4halloween/ween.html","covers/fnaf4.webp"],["FNAW","truffled/fnaw/fnaw.html","covers/fnaw.webp"],["FNF, Friday Night Funkin","truffled/fnffridaynightfunkin/fnfog.html","covers/fnf.webp"],["Football Bros","truffled/footballbros/index.html","covers/footbros.webp"],["Friday Night Funkin Aethos","truffled/fridaynightfunkinaethos/aethos.html",""],["Friday Night Funkin Atrocity","truffled/fridaynightfunkinatrocity/atrocity.html",""],["Friday Night Funkin BFDI 26","truffled/fridaynightfunkinbfdi26/bfdi26.html",""],["Friday Night Funkin Bop City","truffled/fridaynightfunkinbopcity/bopcity.html","covers/bopcity.webp"],["Friday Night Funkin For A BFDI","truffled/fridaynightfunkinforabfdi/ffabfdi.html",""],["Friday Night Funkin Garcello","truffled/fridaynightfunkingarcello/garcello.html",""],["Friday Night Funkin Get Digging","truffled/fridaynightfunkingetdigging/getdigging.html",""],["Friday Night Funkin Golden Apple","truffled/fridaynightfunkingoldenapple/goldenapple.html",""],["Friday Night Funkin Hatsune Miku","truffled/fridaynightfunkinhatsunemiku/miku.html",""],["Friday Night Funkin Hex","truffled/fridaynightfunkinhex/hex.html",""],["Friday Night Funkin Horkglorpgloop","truffled/fridaynightfunkinhorkglorpgloop/horkglorpgloop.html",""],["Friday Night Funkin Infinite Irida","truffled/fridaynightfunkininfiniteirida/infiniteiridra.html",""],["Friday Night Funkin Kapi","truffled/fridaynightfunkinkapi/kapi.html",""],["Friday Night Funkin Mario Madness","truffled/fridaynightfunkinmariomadness/mariomadness.html",""],["Friday Night Funkin Nonsense","truffled/fridaynightfunkinnonsense/nonsense.html",""],["Friday Night Funkin Rewrite","truffled/fridaynightfunkinrewrite/rewrite.html",""],["Friday Night Funkin Rewrite 2","truffled/fridaynightfunkinrewrite2/rewrite2.html",""],["Friday Night Funkin Ron","truffled/fridaynightfunkinron/ron.html",""],["Friday Night Funkin Shaggy","truffled/fridaynightfunkinshaggy/shaggy.html",""],["Friday Night Funkin Shaggy X Matt","truffled/fridaynightfunkinshaggyxmatt/shaggyxmatt.html",""],["Friday Night Funkin Shucks V2","truffled/fridaynightfunkinshucksv2/shucksv2.html",""],["Friday Night Funkin Tricky","truffled/fridaynightfunkintricky/tricky.html",""],["Friday Night Funkin TWIDDLEFINGER","truffled/fridaynightfunkintwiddlefinger/TWIDDLEFINGER.html",""],["Friday Night Funkin Vs. Tord","truffled/fridaynightfunkinvstord/tord.html",""],["Friday Night Funkin Whitty","truffled/fridaynightfunkinwhitty/whitty.html",""],["Friday Night Funkin Zardy","truffled/fridaynightfunkinzardy/zardy.html",""],["Fruit Ninja","truffled/fruitninja/index.html","covers/ninja.webp"],["Fused240","truffled/fused240/index.html","covers/fused240.webp"],["Gabriel's Awesome Schoolhouse","truffled/gabrielsawesomeschoolhousewebport/gash.html","covers/gabriel.webp"],["Gacha Life","truffled/gachalife/life.html","covers/gachalife.webp"],["Gacha Verse","truffled/gachaverse/verse.html","covers/gachaverse.webp"],["Geometry Dash","truffled/geometrydashwebport/gd.html","covers/gd.webp"],["Getaway Shootout","truffled/getawayshootout/index.html","covers/getaway.webp"],["Getting Over It","truffled/gettingoveritwebport/goi.html","covers/gettin.webp"],["Gladihoppers","truffled/gladihoppers/Gladihoppers.html","covers/glad.webp"],["Go to bed","truffled/gotobedwebport/index.html","covers/gotobed.webp"],["Google Baseball","truffled/googlebaseball/gbase.html","covers/google.webp"],["Gorilla Tag","truffled/gorillatagwebport/index.html","covers/gtag.webp"],["Granny","truffled/granny/granny.html","covers/granny.webp"],["Granny 2","truffled/granny2/Granny 2.html","covers/gran2.webp"],["Granny 3","truffled/granny3/Granny 3.html","covers/gran3.webp"],["Gravity run","truffled/gravityrun/index.html","covers/gravity.webp"],["Greybox","truffled/greybox/index.html","covers/grey.webp"],["GTA I","truffled/gtai/index.html","covers/gta.webp"],["GTA II","truffled/gtaii/index.html","covers/gta2.webp"],["GTA III","truffled/gtaiii/index.html","covers/gta3.webp"],["GTA San Andreas","truffled/gtasanandreas/index.html","covers/gtasan.webp"],["GTA Vice City","truffled/gtavicecitywebport/index.html","covers/vice.webp"],["Gun Mayhem","truffled/gunmayhem/index.html","covers/gun.webp"],["Gun Mayhem 2","truffled/gunmayhem2/index.html","covers/gun2.webp"],["Gun Mayhem Redux","truffled/gunmayhemredux/index.html",""],["Gunspin","truffled/gunspin/index.html","covers/guns.webp"],["Half life","truffled/halflife/index.html","covers/halflife.webp"],["Half life 2","truffled/halflife2/index.html","covers/halflife.webp"],["Half life: Opposing Force","truffled/halflifeopposingforce/hlof.html","covers/hlof.webp"],["Happy Wheels","truffled/happywheels/index.html","covers/happy.webp"],["Helltaker","truffled/helltakerwebport/helltaker.html",""],["Hobo 1","truffled/hobo1/hobo1.html",""],["Hobo 2","truffled/hobo2/hobo2.html",""],["Hobo 3","truffled/hobo3/hobo3.html",""],["Hobo 4","truffled/hobo4/hobo4.html",""],["Hobo 5","truffled/hobo5/hobo5.html",""],["Hobo 6","truffled/hobo6/hobo6.html",""],["Hobo 7","truffled/hobo7/hobo7.html",""],["Hollow Knight","truffled/hollowknightwebport/index.html","covers/hollow.webp"],["Hotline Miami","truffled/hotlinemiamiwebport/index.html","covers/hot.webp"],["House Of Hazards","truffled/houseofhazards/index.html","covers/house.webp"],["HUMAN EXPENDITURE PROGRAM","truffled/humanexpenditureprogramwebport/human.html","covers/human.webp"],["Ice Baby Quest 2","truffled/icebabyquest2/index.html","covers/icebaby2.webp"],["Idle Breakout","truffled/idlebreakout/index.html","covers/idle.webp"],["Iron Lung","truffled/ironlungwebport/index.html","covers/iroonlung.webp"],["Jeffrey Epstein Basics In Education And Kidnapping","truffled/jeffreyepsteinbasicsineducationandkidnappingwebport/jeb.html","covers/jeb.webp"],["Jeffys Basics","truffled/jeffysbasicswebport/index.html","covers/jeffys.webp"],["Jelly Drift","truffled/jellydrift/jelly.html","covers/jelly.webp"],["Jetpack Joyride","truffled/jetpackjoyride/index.html","covers/jet.webp"],["Jumbo Mario","truffled/jumbomario/index.html","covers/jumbo.webp"],["Karlson","truffled/karlsonwebport/Karlson.html","covers/karlson.webp"],["Karlson2D","truffled/karlson2dwebport/index.html","covers/karlson2d.webp"],["Kick The Buddy","truffled/kickthebuddywebport/index.html",""],["Kindergarten 1","truffled/kindergarten1webport/index.html","covers/kind1.webp"],["Kindergarten 2","truffled/kindergarten2webport/index.html","covers/kind2.webp"],["Kindergarten 3","truffled/kindergarten3webport/index.html","covers/kind3.webp"],["Kirby Soft And Wet","truffled/kirbysoftandwetwebport/kirbysoftandwet.html","covers/kirbysoftandwet.webp"],["Klifur","truffled/klifur/index.html",""],["Lacey's Flash Games","truffled/laceysflashgameswebport/lacy.html","covers/lacey.webp"],["Learn To Fly","truffled/learntofly/index.html","covers/learn1.webp"],["Learn To Fly 2","truffled/learntofly2/index.html","covers/learn2.webp"],["Learn To Fly 3","truffled/learntofly3/index.html","covers/learn3.webp"],["Learn To Fly Idle","truffled/learntoflyidle/index.html","covers/learni.webp"],["Lego Star Wars","truffled/legostarwars/legostarwars.html","covers/legostarwars.webp"],["Level Devil","truffled/leveldevil/index.html","covers/level.webp"],["Line Rider","truffled/linerider/index.html","covers/line.webp"],["Little Alchemy","truffled/littlealchemy/index.html","covers/lil.webp"],["Little Alchemy 2","truffled/littlealchemy2/little2.html","covers/little2.webp"],["Little Big Planet","truffled/littlebigplanet/index.html","covers/lbp.webp"],["Madness Melee","truffled/madnessmelee/index.html","covers/madness.webp"],["Mario Kart 64","truffled/mariokart64/index.html","covers/mk64.webp"],["Mario Kart 7","truffled/mariokart7/index.html","covers/mk7.webp"],["Mario Kart DS","truffled/mariokartds/index.html","covers/mkds.webp"],["Mario Party 1","truffled/marioparty1/marioparty.html","covers/marioparty1.webp"],["Mario Party 2","truffled/marioparty2/marioparty2.html","covers/marioparty2.webp"],["Mario Party 3","truffled/marioparty3/marioparty3.html","covers/marioparty3.webp"],["Megaman","truffled/megaman/megaman.html","covers/megaman.webp"],["Melon Playground","truffled/melonplayground/index.html","covers/melon.webp"],["Merge Rot","truffled/mergerot/index.html","covers/rot.webp"],["Milkman karlson","truffled/milkmankarlsonwebport/index.html","covers/milk.webp"],["Minecraft 1.12.2","truffled/minecraft1122/index.html",""],["Minecraft 1.8.8","truffled/minecraft188/index.html",""],["Minecraft Legacy Console Edition","truffled/minecraftlegacyconsoleeditionwebport/index.html",""],["Minecraft Pocket Edition","truffled/minecraftpocketeditionwebport/index.html","covers/mcpe.webp"],["Minecraft Wurst","truffled/minecraftwurst/clwurst.html",""],["Minesweeper Mania","truffled/minesweepermania/minesweepermania.html","covers/minese.webp"],["Minesweeper Plus","truffled/minesweeperpluswebport/mineplus.html","covers/mineseplu.webp"],["Miside","truffled/misidewebport/miside.html",""],["Monkey Mart","truffled/monkeymart/index.html","covers/monkb.webp"],["Moto X3M","truffled/motox3m/index.html","covers/moto.webp"],["My teardrop, daniel","truffled/myteardropdaniel/mytear.html","covers/mytear.webp"],["n-gon","truffled/ngon/index.html","covers/ngon.webp"],["Nazi Zombies: Portable","truffled/nazizombiesportable/nzp.html","covers/nazi.webp"],["Needy Streamer Overload","truffled/needystreameroverloadwebport/index.html",""],["New Super Mario Bros","truffled/newsupermariobros/index.html","covers/nsmb.webp"],["Node Buster","truffled/nodebusterwebport/index.html","covers/nodebuster.webp"],["Nubbys Number Factory","truffled/nubbysnumberfactorywebport/nubby.html","covers/nubby.webp"],["Om Nom Run","truffled/omnomrun/omnomrun.html","covers/omnomrun.webp"],["OMORI","truffled/omoriwebport/OMORI.html","covers/omori.webp"],["Oneshot World Machine Edition","truffled/oneshotworldmachineeditionwebport/index.html",""],["Oneshot","truffled/oneshotwebport/oneshot.html","covers/oneshot.webp"],["Orange Roulette","truffled/orangeroulette/orange.html","covers/orange.webp"],["Oshi Oshi Punch","truffled/oshioshipunch/onshi.html","covers/oshi.webp"],["Osu!","truffled/osu/index.html","covers/osu.webp"],["Overburden","truffled/overburdenwebport/overburden.html","covers/overburden.webp"],["OvO","truffled/ovo/index.html","covers/ovo.webp"],["OvO 2","truffled/ovo2/index.html","covers/ovo2.webp"],["OvO Dimensions","truffled/ovodimensions/index.html","covers/ovodi.webp"],["Pacman","truffled/pacman/index.html","covers/pacman.webp"],["Pacman World","truffled/pacmanworld/pacmanw.html","covers/pacmanworld.webp"],["Pacman World 2","truffled/pacmanworld2/pacmanw2.html","covers/pacmanworld2.webp"],["Paint Gal Adventures","truffled/paintgaladventures/Paint Gal Adventures.html","covers/paintgal.webp"],["Papas Bakeria","truffled/papasbakeria/index.html","covers/bake.webp"],["Papas Burgeria","truffled/papasburgeria/index.html","covers/burger.webp"],["Papas Cheeseria","truffled/papascheeseria/index.html",""],["Papas Donuteria","truffled/papasdonuteria/index.html","covers/donut.webp"],["Papas Freezeria","truffled/papasfreezeria/index.html","covers/freeze.webp"],["Papas Pizzaeria","truffled/papaspizzaeria/index.html","covers/pizza.webp"],["Paper Mario","truffled/papermario/papermario.html","covers/papermario.webp"],["Paperio 2","truffled/paperio2/index.html","covers/paperio2.webp"],["Papers, Please","truffled/papersplease/papers.html","covers/papers.webp"],["Parappa The Rapper","truffled/parappatherapper/index.html","covers/rapper.webp"],["Parappa The Rapper 2","truffled/parappatherapper2/index.html","covers/parappa2.webp"],["Peaks of Yore","truffled/peaksofyorewebport/peaksofyore.html","covers/peaksofyore.webp"],["Peggle","truffled/peggle/Peggle.html","covers/peggle.webp"],["People Playground","truffled/peopleplaygroundwebport/index.html","covers/peoplepg.webp"],["Pikuniku","truffled/pikunikuwebport/index.html",""],["Pixel Gun 3D","truffled/pixelgun3d/index.html","covers/pixelgun.webp"],["Pizza Tower","truffled/pizzatowerwebport/Pizza Tower.html","covers/pizzatower.webp"],["Pizza Tower: Scoutdigo","truffled/pizzatowerscoutdigo/pts.html","covers/pts.webp"],["Plants VS Zombies","truffled/plantsvszombies/pvs.html","covers/pvz.webp"],["Plants VS Zombies Garden Endless","truffled/plantsvszombiesgardenendless/index.html","covers/pvz2.webp"],["Plauge Inc","truffled/plaugeincwebport/index.html",""],["Pokemon Academy Life Forever","truffled/pokemonacademylifeforever/pokemonacademy.html","covers/pokemonacademy.webp"],["Pokemon Blue","truffled/pokemonblue/blue.html","covers/blue.webp"],["Pokemon Crystal","truffled/pokemoncrystal/blob.html","covers/crystal.webp"],["Pokemon Emerald","truffled/pokemonemerald/em.html","covers/em.webp"],["Pokemon Gold","truffled/pokemongold/red.html","covers/gold.webp"],["Pokemon Red","truffled/pokemonred/red.html",""],["Pokemon Stadium","truffled/pokemonstadium/pokestad.html",""],["Pokemon Stadium 2","truffled/pokemonstadium2/pokestad2.html",""],["Polytrack","truffled/polytrack/index.html","covers/poly.webp"],["Portal","truffled/portal/index.html","covers/portal.webp"],["Postal","truffled/postalwebport/postal.html","covers/postal.webp"],["Pretend its not there","truffled/pretenditsnottherewebport/index.html","covers/pre.webp"],["Quake","truffled/quake/index.html","covers/quake.webp"],["Quake II","truffled/quakeii/index.html","covers/quakeii.webp"],["Quake III","truffled/quakeiii/Quake3.htm","covers/quakeiii.webp"],["Raft Wars","truffled/raftwars/index.html","covers/raft1.webp"],["Raft Wars 2","truffled/raftwars2/index.html","covers/raft2.webp"],["RAFT","truffled/raftwebport/index.html","covers/raft.webp"],["Ragdoll Archers","truffled/ragdollarchers/index.html","covers/archer.webp"],["Ragdoll Hit","truffled/ragdollhit/index.html","covers/hit.webp"],["Raldi's Crack House","truffled/raldiscrackhouse/index.html","covers/raldi.webp"],["Rayman","truffled/rayman/rayman.html","covers/rayman.webp"],["RE:RUN","truffled/rerunwebport/index.html","covers/rerun.webp"],["REPO","truffled/repowebport/index.html","covers/repo.webp"],["Resident Evil 1","truffled/residentevil1/res1.html","covers/res1.webp"],["Resident Evil 2","truffled/residentevil2/res2.html","covers/res2.webp"],["Retro Bowl","truffled/retrobowl/index.html","covers/retro.webp"],["Retro Bowl College","truffled/retrobowlcollege/index.html","covers/retroc.webp"],["Rhythm Heaven","truffled/rhythmheaven/rhythm.html",""],["Riddle School","truffled/riddleschool/index.html","covers/riddle1.webp"],["Riddle School 2","truffled/riddleschool2/index.html","covers/riddle2.webp"],["Riddle School 3","truffled/riddleschool3/index.html","covers/riddle3.webp"],["Riddle School 4","truffled/riddleschool4/index.html","covers/riddle4.webp"],["Riddle School 5","truffled/riddleschool5/index.html","covers/riddle5.webp"],["Riddle School Transfer","truffled/riddleschooltransfer/index.html","covers/riddletr.webp"],["Riddle School Transfer 2","truffled/riddleschooltransfer2/index.html","covers/riddletr2.webp"],["Rooftop Snipers","truffled/rooftopsnipers/index.html","covers/roof1.webp"],["Rooftop Snipers 2","truffled/rooftopsnipers2/index.html","covers/roof2.webp"],["Run","truffled/run/run.html","covers/run1.webp"],["Run 2","truffled/run2/run2.html","covers/run2.webp"],["Run 3","truffled/run3/run3.html","covers/run3.webp"],["Running Fred","truffled/runningfredwebport/index.html",""],["Saihate Station","truffled/saihatestationwebport/saihatestation.html","covers/saihatestation.webp"],["Sandboxels","truffled/sandboxels/Sandboxels.html","covers/sand.webp"],["Sanic Ball","truffled/sanicballwebport/index.html","covers/sanicball.webp"],["Scary Path","truffled/scarypath/index.html","covers/path.webp"],["Schoolboy Runaway","truffled/schoolboyrunawaywebport/runaway.html","covers/runaway.webp"],["Shift At Midnight","truffled/shiftatmidnightwebport/shift.html","covers/shift.webp"],["Silksong","truffled/silksongwebport/index.html","covers/silk.webp"],["Skibidi Shooter","truffled/skibidishooter/index.html",""],["Skiing Fred","truffled/skiingfred/index.html","covers/ski.webp"],["Slender: The 8 Pages","truffled/slenderthe8pageswebport/index.html","covers/slender.webp"],["Slendytubbies I","truffled/slendytubbiesiwebport/slendy1.html","covers/slendy.webp"],["Slendytubbies II 2D","truffled/slendytubbiesii2dwebport/index.html",""],["Slendytubbies II","truffled/slendytubbiesiiwebport/index.html",""],["Slient Hill","truffled/slienthill/slienthill.html","covers/slienthill.webp"],["Slime Ranchers","truffled/slimerancherswebport/slimeranchers.html","covers/slime.webp"],["Slither.io","truffled/slitheriowebport/sfge.html","covers/sli.webp"],["Slope","truffled/slope/index.html","covers/slope.webp"],["Slowroads","truffled/slowroads/index.html","covers/slow.webp"],["SM64, Super Mario 64","truffled/sm64supermario64/index.html","covers/sm64.webp"],["Smash Karts","truffled/smashkarts/index.html","covers/smashkarts.webp"],["Snow Battle","truffled/snowbattle/snow.html","covers/snow.webp"],["Snow Rider 3D","truffled/snowrider3d/index.html","covers/snowio.webp"],["Soccer Bros","truffled/soccerbros/index.html","covers/soccer.webp"],["Soccer Random","truffled/soccerrandom/index.html","covers/soccerra.webp"],["Solar Smash","truffled/solarsmash/solar.html","covers/solar.webp"],["Solitaire","truffled/solitaire/index.html","covers/soli.webp"],["Sonic 1","truffled/sonic1/index.html","covers/sonic1.webp"],["Sonic 2","truffled/sonic2/index.html","covers/sonic2.webp"],["Sonic 3","truffled/sonic3/sonic3.html","covers/sonic3.webp"],["Sonic 3D Blast","truffled/sonic3dblast/sonic3dblast.html","covers/sonic3dblast.webp"],["Sonic 4","truffled/sonic4/index.html","covers/sonic4.webp"],["Sonic CD","truffled/soniccd/soniccd.html","covers/soniccd.webp"],["Sonic EXE","truffled/sonicexe/sonicexe.html","covers/sonicexe.webp"],["Sonic Jam","truffled/sonicjam/sonicjam.html","covers/sonicjam.webp"],["Sonic Mania","truffled/sonicmaniawebport/sonic.html","covers/mania.webp"],["Sonic R","truffled/sonicr/sonicr.html","covers/sonicr.webp"],["Sonic Robo Blast 2","truffled/sonicroboblast2/index.html","covers/robo.webp"],["Sonic Robo Blast 2 KART","truffled/sonicroboblast2kart/index.html",""],["Sonic World Next","truffled/sonicworldnext/index.html","covers/swn.webp"],["Space Waves","truffled/spacewaves/spacewaves.html","covers/space.webp"],["Spaceflight Simulator","truffled/spaceflightsimulatorwebport/spaceflight.html",""],["Spank the monkey, bogs favorites","truffled/spankthemonkeybogsfavorites/monkey.html","covers/monkey.webp"],["Speed Stars","truffled/speedstars/index.html","covers/speed.webp"],["Spelunky Classic HD","truffled/spelunkyclassichd/spelunky.html","covers/spelunkyclassic.webp"],["Starbound","truffled/starboundwebport/index.html","covers/starbound.webp"],["Stardew Valley","truffled/stardewvalleywebport/index.html","covers/stardew.webp"],["Stick War: Legacy","truffled/stickwarlegacy/stickwar.html","covers/stickwar.webp"],["Stick With It","truffled/stickwithitwebport/index.html","covers/stick.webp"],["Stickman Hook","truffled/stickmanhook/index.html","covers/stickman.webp"],["Subway Surfers","truffled/subwaysurfers/index.html","covers/sub.webp"],["Super Hot","truffled/superhot/index.html","covers/superhot.webp"],["Super Mario 64, SM64COOP","truffled/supermario64sm64coop/sm64coopdx.html",""],["Super Mario Bros","truffled/supermariobros/smb.html","covers/smb.webp"],["Super Mario Galaxy DS","truffled/supermariogalaxyds/smgds.html","covers/smgds.webp"],["Super Meat Boy","truffled/supermeatboy/index.html","covers/meat.webp"],["Super Monkey Ball 1 & 2","truffled/supermonkeyball12/monk.html","covers/monk.webp"],["Super Monkey Ball JR","truffled/supermonkeyballjr/supermonkey.html","covers/supermonkey.webp"],["Super Oliver World","truffled/superoliverworld/superoliverworld.html","covers/superoliverworld.webp"],["Super Smash Bros","truffled/supersmashbros/ssm.html","covers/ssm.webp"],["Super Smash Flash","truffled/supersmashflash/ssf.html","covers/supersmash.webp"],["Super Smash Flash 2","truffled/supersmashflash2/ssf2.html","covers/ssf2.webp"],["Survivor.io","truffled/survivoriowebport/survivor.html","covers/survivorio.webp"],["Taiko No Tatsujini","truffled/taikonotatsujini/index.html","covers/taiko.webp"],["Tanuki Sunset","truffled/tanukisunset/index.html","covers/tanukisunset.webp"],["Tattle Tail","truffled/tattletailwebport/index.html","covers/tat.webp"],["Tax Heaven 3000","truffled/taxheaven3000webport/index.html",""],["Ten Basket","truffled/tenbasket/index.html","covers/ten.webp"],["Terraria","truffled/terrariawebport/terraria-wrapper.html","covers/ter.webp"],["Tetris","truffled/tetris/index.html","covers/tet.webp"],["Tetrisweeper","truffled/tetrisweeper/index.html","covers/tetriss.webp"],["Thats Not My Neighbor","truffled/thatsnotmyneighborwebport/thatsnot.html","covers/thatsnot.webp"],["The Binding Of Isaac Wrath Of The Lamb","truffled/thebindingofisaacwrathofthelamb/tboiw.html","covers/tboiw.webp"],["The Binding Of Isaac Wrath Of The Lamb: Eternal","truffled/thebindingofisaacwrathofthelambeternal/boilambeternal.html","covers/boilambeternal.webp"],["The Binding Of Issac","truffled/thebindingofissac/index.html","covers/tboi.webp"],["The Binding Of Issac: Rebirth","truffled/thebindingofissacrebirthwebport/index.html","covers/tboir.webp"],["The Impossible Quiz","truffled/theimpossiblequiz/index.html","covers/quiz.webp"],["The Legend of Zelda Ocarina of Time","truffled/thelegendofzeldaocarinaoftime/tloz.html","covers/tloz.webp"],["There Is No Game","truffled/thereisnogame/index.html",""],["Time Shooter 1","truffled/timeshooter1/time1.html","covers/tim1.webp"],["Time Shooter 2","truffled/timeshooter2/index.html","covers/tim2.webp"],["Time Shooter 3","truffled/timeshooter3/index.html","covers/tim3.webp"],["Tiny Fishing","truffled/tinyfishing/index.html","covers/tiny.webp"],["To The Core","truffled/tothecorewebport/index.html","covers/to.webp"],["Tomb Of The Mask","truffled/tombofthemask/index.html","covers/tomb.webp"],["Tomodachi Collection","truffled/tomodachicollection/tomo.html","covers/tomo.webp"],["Touhou 1 Touhou-Reiiden","truffled/touhou1touhoureiiden/touhou.html","covers/touhou.webp"],["Touhou 2 Touhou-Fuumaroku","truffled/touhou2touhoufuumaroku/touhou2.html",""],["Touhou 3 Touhou-Yumejikuu","truffled/touhou3touhouyumejikuu/touhou3.html",""],["Touhou 4 Touhou-Gensokyou","truffled/touhou4touhougensokyou/touhou4.html",""],["Touhou 5 Touhou-Kaikidan","truffled/touhou5touhoukaikidan/touhou5.html",""],["Touhou Mother","truffled/touhoumotherwebport/index.html",""],["Tube Jumpers","truffled/tubejumpers/tube.html","covers/tube.webp"],["Tung Tung Basics","truffled/tungtungbasicswebport/index.html",""],["Tung Tung Horror","truffled/tungtunghorror/tung.html","covers/tung.webp"],["Ultrakill","truffled/ultrakillwebport/index.html","covers/ultra.webp"],["Ultrapool","truffled/ultrapoolwebport/ultrapool.html","covers/ultrapool.webp"],["Um Jammer Lammy","truffled/umjammerlammy/jemmer.html","covers/jammer.webp"],["Undertale 10th Anniversary","truffled/undertale10thanniversarywebport/index.html",""],["Undertale Last Breath","truffled/undertalelastbreath/udlb.html",""],["Undertale Yellow","truffled/undertaleyellowwebport/play.html",""],["Undertale","truffled/undertalewebport/undertale.html","covers/uertale.webp"],["Untitled Goose Game","truffled/untitledgoosegamewebport/index.html","covers/untitled.webp"],["Vex","truffled/vex/index.html","covers/vex.webp"],["Vex 2","truffled/vex2/vex2.html","covers/vex2.webp"],["Vex 3","truffled/vex3/index.html","covers/vex3.webp"],["Vex 4","truffled/vex4/index.html","covers/vex4.webp"],["Vex 5","truffled/vex5/index.html","covers/vex5.webp"],["Vex 6","truffled/vex6/vex6.html","covers/vex6.webp"],["Vex 7","truffled/vex7/vex7.html","covers/vex7.webp"],["Vex 8","truffled/vex8/vex8.html","covers/vex8.webp"],["Vib-Ribbon","truffled/vibribbonwebport/vib.html",""],["Volley Random","truffled/volleyrandom/index.html",""],["Warioware D.I.Y","truffled/wariowarediy/wariowarediy.html","covers/wariowarediy.webp"],["We Become What We behold","truffled/webecomewhatwebehold/wbwwb.html","covers/wbwwb.webp"],["Webfishing","truffled/webfishingwebport/index.html","covers/web.webp"],["Who's Your Daddy","truffled/whosyourdaddywebport/index.html","covers/daddy.webp"],["Witch's Heart","truffled/witchsheartwebport/witches.html","covers/witches.webp"],["Woody's Incredible Journey To The Escape From Eternal Terror","truffled/woodysincrediblejourneytotheescapefrometernalterror/index.html","covers/WIJ.webp"],["Wordle","truffled/wordle/index.html","covers/wrdd.webp"],["Worlds Hardest Game","truffled/worldshardestgame/twhg.html","covers/world.webp"],["Worlds Hardest Game 2","truffled/worldshardestgame2/index.html",""],["Worlds Hardest Game 3","truffled/worldshardestgame3/index.html",""],["Yandere Simulator","truffled/yanderesimulatorwebport/yandere.html","covers/yandere.webp"],["Yoked","truffled/yoked/yoked.html","covers/yoked.webp"],["Your Only Move Is HUSTLE, YOMI Hustle","truffled/youronlymoveishustleyomihustlewebport/index.html","covers/YOMI.webp"],["Yume Nikki","truffled/yumenikkiwebport/yume.html","covers/yumi.webp"]];
+const gurl=u=>String(u).replace(/^\/+/,'');
+async function loadGames(){
+  if(gamesLoaded){renderGames();return}
+  try{const r=await fetch('games.json');if(!r.ok)throw 0;GAMES=(await r.json()).filter(g=>g&&g.name&&g.url)}
+  catch(e){GAMES=GAMES_BUILTIN.map(([name,url,img])=>({name,url,img}))}
+  gamesLoaded=true;
+  $('#nGames').textContent=GAMES.length+' games';
+  renderGames();
+}
+function renderGames(){
+  const list=GAMES.filter(g=>g.name.toLowerCase().includes(query)), part=list.slice(0,gShown);
+  $('#shownG').textContent=list.length+(list.length===1?' game':' games');
+  $('#gridG').innerHTML=list.length?part.map(g=>{
+    const h=[...g.name].reduce((a,c)=>(a*31+c.charCodeAt(0))%90,0)+240;
+    return `<button class="gt" data-u="${esc(g.url)}" data-n="${esc(g.name)}">${art({c:[`hsl(${h} 60% 22%)`,`hsl(${h} 75% 52%)`],img:g.img?gurl(g.img):'',glyph:([...g.name][0]||'?').toUpperCase()})}<b>${esc(g.name)}</b></button>`}).join('')
+    +(list.length>gShown?'<button class="btn ghost gmore" id="gmore" type="button">Show more ('+(list.length-gShown)+' left)</button>':'')
+    :'<div class="empty">'+(GAMES.length?'No games match your search.':'No games yet.')+'</div>';
+}
+async function playGame(name,url){
+  const u=gurl(url), f=$('#pf');
+  $('#pt').textContent=name;$('#pcode').textContent=u;
+  $('#player').classList.add('open');$('#note').classList.remove('show');f.src='about:blank';
+  let ok=true;try{const r=await fetch(u,{method:'HEAD'});ok=r.ok}catch(e){ok=true}
+  if(!ok){$('#note').classList.add('show');return}
+  f.src=u;
+}
+function closeGame(){$('#player').classList.remove('open');$('#pf').src='about:blank'}
+$('#gridG').addEventListener('click',e=>{
+  if(e.target.closest('#gmore')){gShown+=60;renderGames();return}
+  const b=e.target.closest('.gt');if(b)playGame(b.dataset.n,b.dataset.u);
+});
+$('#pclose').addEventListener('click',closeGame);
+$('#pfs').addEventListener('click',()=>{const f=$('#pf');(f.requestFullscreen||f.webkitRequestFullscreen||(()=>{})).call(f)});
+
+/* routing on load (supports invite links like #chat=ABCD2345) */
+(function(){
+  const h=location.hash.slice(1), m=h.match(/^chat=(.+)$/);
+  if(m){history.replaceState(null,'','#chat');go('chat',false);addPerson(m[1])}
+  else if(['links','movies','ai','chat','games'].includes(h)) go(h,false);
+})();
+</script>
+</body>
+</html>

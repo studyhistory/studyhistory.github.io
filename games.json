@@ -1,0 +1,2517 @@
+[
+ {
+  "name": "1",
+  "img": "covers/1.webp",
+  "url": "truffled/1/index.html"
+ },
+ {
+  "name": "1 on 1 Soccer",
+  "img": "",
+  "url": "truffled/1on1soccer/index.html"
+ },
+ {
+  "name": "10 Minutes Till Dawn",
+  "img": "covers/10.webp",
+  "url": "truffled/10minutestilldawn/index.html"
+ },
+ {
+  "name": "1v1.lol",
+  "img": "covers/1v1.webp",
+  "url": "truffled/1v1lol/1v1.html"
+ },
+ {
+  "name": "20 Minutes Till Dawn",
+  "img": "",
+  "url": "truffled/20minutestilldawn/index.html"
+ },
+ {
+  "name": "2048",
+  "img": "covers/2048.webp",
+  "url": "truffled/2048/index.html"
+ },
+ {
+  "name": "-3",
+  "img": "covers/3.webp",
+  "url": "truffled/3/index.html"
+ },
+ {
+  "name": "30",
+  "img": "covers/30.webp",
+  "url": "truffled/30/index.html"
+ },
+ {
+  "name": "A Difficult Game About Climbing",
+  "img": "covers/adgac.webp",
+  "url": "truffled/adifficultgameaboutclimbingwebport/adgac.html"
+ },
+ {
+  "name": "A Game About Feeding A Blackhole",
+  "img": "covers/blackhole.webp",
+  "url": "truffled/agameaboutfeedingablackhole/blackhole.html"
+ },
+ {
+  "name": "A Small World Cup",
+  "img": "covers/worldcup.webp",
+  "url": "truffled/asmallworldcup/aswc.html"
+ },
+ {
+  "name": "Academytale",
+  "img": "covers/academytale.webp",
+  "url": "truffled/academytalewebport/index.html"
+ },
+ {
+  "name": "Achievement Unlocked",
+  "img": "covers/achieve.webp",
+  "url": "truffled/achievementunlocked/index.html"
+ },
+ {
+  "name": "ADOFAI",
+  "img": "covers/adofai.webp",
+  "url": "truffled/adofai/index.html"
+ },
+ {
+  "name": "Adventure Capitalist",
+  "img": "covers/adventure.webp",
+  "url": "truffled/adventurecapitalist/index.html"
+ },
+ {
+  "name": "Amanda the adventurer",
+  "img": "covers/aman.webp",
+  "url": "truffled/amandatheadventurerwebport/index.html"
+ },
+ {
+  "name": "Amaze",
+  "img": "covers/amaze.webp",
+  "url": "truffled/amaze/index.html"
+ },
+ {
+  "name": "Among us",
+  "img": "covers/among.webp",
+  "url": "truffled/amongus/index.html"
+ },
+ {
+  "name": "Angry Birds",
+  "img": "covers/angry.webp",
+  "url": "truffled/angrybirds/Angrybirds.html"
+ },
+ {
+  "name": "Angry Birds Epic",
+  "img": "covers/epic.webp",
+  "url": "truffled/angrybirdsepicwebport/index.html"
+ },
+ {
+  "name": "Angry Birds Online",
+  "img": "covers/angrybirdsonline.webp",
+  "url": "truffled/angrybirdsonline/angrybirdsonline.html"
+ },
+ {
+  "name": "Animal Crossing Population: Growing!",
+  "img": "",
+  "url": "truffled/animalcrossingpopulationgrowingwebport/index.html"
+ },
+ {
+  "name": "Animal Crossing Wild World",
+  "img": "",
+  "url": "truffled/animalcrossingwildworld/acww.html"
+ },
+ {
+  "name": "Antonblast",
+  "img": "covers/anton.webp",
+  "url": "truffled/antonblast/anton.html"
+ },
+ {
+  "name": "Apes Vs Helium",
+  "img": "covers/avh.webp",
+  "url": "truffled/apesvsheliumwebport/index.html"
+ },
+ {
+  "name": "Arthur's Nightmare",
+  "img": "covers/arthursnight.webp",
+  "url": "truffled/arthursnightmarewebport/arthur.html"
+ },
+ {
+  "name": "-b",
+  "img": "",
+  "url": "truffled/b/index.html"
+ },
+ {
+  "name": "Bad Icecream 1",
+  "img": "covers/badice1.webp",
+  "url": "truffled/badicecream1/badice1.html"
+ },
+ {
+  "name": "Bad Icecream 2",
+  "img": "covers/badice2.webp",
+  "url": "truffled/badicecream2/badice2.html"
+ },
+ {
+  "name": "Bad Icecream 3",
+  "img": "covers/badice3.webp",
+  "url": "truffled/badicecream3/badice3.html"
+ },
+ {
+  "name": "Bad Parenting",
+  "img": "covers/bad.webp",
+  "url": "truffled/badparentingwebport/index.html"
+ },
+ {
+  "name": "Bad Piggies",
+  "img": "covers/badp.webp",
+  "url": "truffled/badpiggies/piggies.html"
+ },
+ {
+  "name": "Bad time Simulator",
+  "img": "covers/badt.webp",
+  "url": "truffled/badtimesimulator/index.html"
+ },
+ {
+  "name": "Balatro",
+  "img": "covers/bal.webp",
+  "url": "truffled/balatrowebport/index.html"
+ },
+ {
+  "name": "Baldi's Basics",
+  "img": "covers/baldi.webp",
+  "url": "truffled/baldisbasics/index.html"
+ },
+ {
+  "name": "Baldi's Basics Birthday Bash",
+  "img": "covers/bday.webp",
+  "url": "truffled/baldisbasicsbirthdaybashwebport/index.html"
+ },
+ {
+  "name": "Baldi's Basics Classic Remastered",
+  "img": "covers/baldire.webp",
+  "url": "truffled/baldisbasicsclassicremasteredwebport/index.html"
+ },
+ {
+  "name": "Baldi's Basics Plus",
+  "img": "covers/baldiplus.webp",
+  "url": "truffled/baldisbasicspluswebport/bbp.html"
+ },
+ {
+  "name": "Baldi's Basics Ultra Decompile",
+  "img": "",
+  "url": "truffled/baldisbasicsultradecompile/baldidecomp.html"
+ },
+ {
+  "name": "Baldi's Fun New School Plus Ultimate Edition",
+  "img": "",
+  "url": "truffled/baldisfunnewschoolplusultimateedition/index.html"
+ },
+ {
+  "name": "Baldurs Gate 2",
+  "img": "covers/gate2.webp",
+  "url": "truffled/baldursgate2webport/index.html"
+ },
+ {
+  "name": "Banjo Kazooie",
+  "img": "covers/banjokazooie.webp",
+  "url": "truffled/banjokazooie/banjokazooie.html"
+ },
+ {
+  "name": "Bart Bash",
+  "img": "covers/bartbash.webp",
+  "url": "truffled/bartbash/bartbash.html"
+ },
+ {
+  "name": "Bart Blast",
+  "img": "covers/bart.webp",
+  "url": "truffled/bartblast/bart.html"
+ },
+ {
+  "name": "Baseball Bros",
+  "img": "covers/basebros.webp",
+  "url": "truffled/baseballbros/index.html"
+ },
+ {
+  "name": "Basket Bros",
+  "img": "covers/basket.webp",
+  "url": "truffled/basketbros/basket.html"
+ },
+ {
+  "name": "Basket Random",
+  "img": "",
+  "url": "truffled/basketrandom/index.html"
+ },
+ {
+  "name": "Basketball stars",
+  "img": "covers/basketstars.webp",
+  "url": "truffled/basketballstars/index.html"
+ },
+ {
+  "name": "Beatblock",
+  "img": "covers/beatblock.webp",
+  "url": "truffled/beatblockwebport/index.html"
+ },
+ {
+  "name": "Bee Movie Game",
+  "img": "",
+  "url": "truffled/beemoviegame/index.html"
+ },
+ {
+  "name": "Bendy And The Ink Machine",
+  "img": "covers/bendy.webp",
+  "url": "truffled/bendyandtheinkmachinewebport/index.html"
+ },
+ {
+  "name": "Bergentruck",
+  "img": "covers/ber.webp",
+  "url": "truffled/bergentruckwebport/index.html"
+ },
+ {
+  "name": "Bfdia 5b",
+  "img": "covers/bfdia5b.webp",
+  "url": "truffled/bfdia5b/index.html"
+ },
+ {
+  "name": "Bitlife",
+  "img": "covers/bit.webp",
+  "url": "truffled/bitlife/index.html"
+ },
+ {
+  "name": "Black Jack",
+  "img": "covers/blackjack.webp",
+  "url": "truffled/blackjack/BlackJack.html"
+ },
+ {
+  "name": "Block Blast",
+  "img": "",
+  "url": "truffled/blockblast/index.html"
+ },
+ {
+  "name": "Bloodmoney",
+  "img": "covers/blood.webp",
+  "url": "truffled/bloodmoneywebport/index.html"
+ },
+ {
+  "name": "Bloon TD1",
+  "img": "",
+  "url": "truffled/bloontd1/index.html"
+ },
+ {
+  "name": "Bloon TD2",
+  "img": "covers/blo2.webp",
+  "url": "truffled/bloontd2/index.html"
+ },
+ {
+  "name": "Bloon TD3",
+  "img": "covers/blo3.webp",
+  "url": "truffled/bloontd3/index.html"
+ },
+ {
+  "name": "Bloon TD4",
+  "img": "covers/btd4.webp",
+  "url": "truffled/bloontd4/bloonstd4.html"
+ },
+ {
+  "name": "Bloons TD5",
+  "img": "covers/blo5.webp",
+  "url": "truffled/bloonstd5/index.html"
+ },
+ {
+  "name": "Bloons TD6",
+  "img": "covers/blo6.webp",
+  "url": "truffled/bloonstd6/index.html"
+ },
+ {
+  "name": "Bloxors",
+  "img": "covers/bloxorz.webp",
+  "url": "truffled/bloxors/index.html"
+ },
+ {
+  "name": "Bombmerman",
+  "img": "covers/bomberman.webp",
+  "url": "truffled/bombmerman/bomberman.html"
+ },
+ {
+  "name": "Bombmerman 2",
+  "img": "covers/bomberman2.webp",
+  "url": "truffled/bombmerman2/bomberman2.html"
+ },
+ {
+  "name": "Boxing Random",
+  "img": "covers/boxing.webp",
+  "url": "truffled/boxingrandom/boxing.html"
+ },
+ {
+  "name": "Brotato Paws And Claws",
+  "img": "covers/paws.webp",
+  "url": "truffled/brotatopawsandclawswebport/index.html"
+ },
+ {
+  "name": "Buckshot Roulette",
+  "img": "covers/buck.webp",
+  "url": "truffled/buckshotroulettewebport/index.html"
+ },
+ {
+  "name": "Burrito Bison",
+  "img": "covers/burrito.webp",
+  "url": "truffled/burritobison/index.html"
+ },
+ {
+  "name": "Burrito Bison Revenge",
+  "img": "covers/bbe.webp",
+  "url": "truffled/burritobisonrevenge/bbe.html"
+ },
+ {
+  "name": "Capuchin",
+  "img": "covers/capuchin.webp",
+  "url": "truffled/capuchinwebport/index.html"
+ },
+ {
+  "name": "CaseOhs Basics in Eating and Fast Food",
+  "img": "covers/caseoh.webp",
+  "url": "truffled/caseohsbasicsineatingandfastfoodwebport/caseoh.html"
+ },
+ {
+  "name": "Celeste",
+  "img": "covers/celeste.webp",
+  "url": "truffled/celestewebport/index.html"
+ },
+ {
+  "name": "Cheese Rolling",
+  "img": "covers/cheese.webp",
+  "url": "truffled/cheeserollingwebport/cheese.html"
+ },
+ {
+  "name": "Christmas Massacre",
+  "img": "covers/christmas.webp",
+  "url": "truffled/christmasmassacrewebport/christmas.html"
+ },
+ {
+  "name": "Class Of 09 Flipside",
+  "img": "covers/flip.webp",
+  "url": "truffled/classof09flipsidewebport/index.html"
+ },
+ {
+  "name": "Class Of 09 Re-Up",
+  "img": "covers/reup.webp",
+  "url": "truffled/classof09reupwebport/index.html"
+ },
+ {
+  "name": "Class Of 09",
+  "img": "covers/class.webp",
+  "url": "truffled/classof09webport/index.html"
+ },
+ {
+  "name": "Clover Pit",
+  "img": "covers/clover.webp",
+  "url": "truffled/cloverpit/cloverpit.html"
+ },
+ {
+  "name": "Cluster Rush",
+  "img": "covers/cluster.webp",
+  "url": "truffled/clusterrush/index.html"
+ },
+ {
+  "name": "Coffee Talk",
+  "img": "covers/coffee.webp",
+  "url": "truffled/coffeetalk/index.html"
+ },
+ {
+  "name": "Cookie Clicker",
+  "img": "covers/cookie.webp",
+  "url": "truffled/cookieclicker/index.html"
+ },
+ {
+  "name": "Cooking Mama",
+  "img": "covers/cookingmama.webp",
+  "url": "truffled/cookingmama/cookingmama.html"
+ },
+ {
+  "name": "Cooking Mama 2",
+  "img": "covers/cookingmama2.webp",
+  "url": "truffled/cookingmama2/cookingmama2.html"
+ },
+ {
+  "name": "Cooking Mama 3",
+  "img": "covers/cookingmama3.webp",
+  "url": "truffled/cookingmama3/cookingmama3.html"
+ },
+ {
+  "name": "Counter Stike 0.8",
+  "img": "covers/cs08.webp",
+  "url": "truffled/counterstike08/index.html"
+ },
+ {
+  "name": "Crash Bandicoot 1",
+  "img": "covers/crash1.webp",
+  "url": "truffled/crashbandicoot1/crash1.html"
+ },
+ {
+  "name": "Crash Bandicoot 2",
+  "img": "covers/crash2.webp",
+  "url": "truffled/crashbandicoot2/crash2.html"
+ },
+ {
+  "name": "Crash Bandicoot 3",
+  "img": "covers/crash3.webp",
+  "url": "truffled/crashbandicoot3/crash3.html"
+ },
+ {
+  "name": "Crazy Balls",
+  "img": "covers/balls.webp",
+  "url": "truffled/crazyballs/balls.html"
+ },
+ {
+  "name": "CrazyCattle3D",
+  "img": "covers/crazyca.webp",
+  "url": "truffled/crazycattle3dwebport/index.html"
+ },
+ {
+  "name": "Crossy Roads",
+  "img": "covers/crossy.webp",
+  "url": "truffled/crossyroads/crossy.html"
+ },
+ {
+  "name": "Cruelty Squad",
+  "img": "covers/cruelty.webp",
+  "url": "truffled/crueltysquadwebport/index.html"
+ },
+ {
+  "name": "Csgo Clicker",
+  "img": "covers/csgo.webp",
+  "url": "truffled/csgoclicker/index.html"
+ },
+ {
+  "name": "Cuphead",
+  "img": "covers/cup.webp",
+  "url": "truffled/cupheadwebport/index.html"
+ },
+ {
+  "name": "Customer Support",
+  "img": "covers/custom.webp",
+  "url": "truffled/customersupportwebport/index.html"
+ },
+ {
+  "name": "Cut The Rope",
+  "img": "covers/cut1.webp",
+  "url": "truffled/cuttherope/cut.html"
+ },
+ {
+  "name": "Cut The Rope : Time Travel",
+  "img": "covers/time.webp",
+  "url": "truffled/cuttheropetimetravel/time.html"
+ },
+ {
+  "name": "Cut The Rope Holiday",
+  "img": "covers/cut2.webp",
+  "url": "truffled/cuttheropeholiday/hol.html"
+ },
+ {
+  "name": "Dadish",
+  "img": "covers/dadish.webp",
+  "url": "truffled/dadish/dadish.html"
+ },
+ {
+  "name": "Dadish 2",
+  "img": "covers/dadish2.webp",
+  "url": "truffled/dadish2/dadish2.html"
+ },
+ {
+  "name": "Dadish 3",
+  "img": "covers/dadish3.webp",
+  "url": "truffled/dadish3/dadish3.html"
+ },
+ {
+  "name": "Dadish 3d",
+  "img": "covers/dadish3d.webp",
+  "url": "truffled/dadish3d/dadish3d.html"
+ },
+ {
+  "name": "Dadish Daily",
+  "img": "covers/daily.webp",
+  "url": "truffled/dadishdaily/daily.html"
+ },
+ {
+  "name": "Danganronpa",
+  "img": "covers/dan.webp",
+  "url": "truffled/danganronpa/index.html"
+ },
+ {
+  "name": "DEAD PLATE",
+  "img": "covers/deadp.webp",
+  "url": "truffled/deadplatewebport/dead.html"
+ },
+ {
+  "name": "Dead Tapes",
+  "img": "covers/deadta.webp",
+  "url": "truffled/deadtapes/index.html"
+ },
+ {
+  "name": "Deadseat",
+  "img": "covers/deadseat.webp",
+  "url": "truffled/deadseatwebport/index.html"
+ },
+ {
+  "name": "Death Run 3D",
+  "img": "covers/death.webp",
+  "url": "truffled/deathrun3d/index.html"
+ },
+ {
+  "name": "Deltarune",
+  "img": "covers/deltarune.webp",
+  "url": "truffled/deltarunewebport/index.html"
+ },
+ {
+  "name": "Deltatraveler",
+  "img": "covers/deltatr.webp",
+  "url": "truffled/deltatravelerwebport/deltatr.html"
+ },
+ {
+  "name": "Diablo",
+  "img": "covers/diablo.webp",
+  "url": "truffled/diablo/index.html"
+ },
+ {
+  "name": "Dice A Million",
+  "img": "covers/diceamillion.webp",
+  "url": "truffled/diceamillionwebport/diceamillion.html"
+ },
+ {
+  "name": "Dinosaur",
+  "img": "covers/dino.webp",
+  "url": "truffled/dinosaur/index.html"
+ },
+ {
+  "name": "Do Not Take This Cat Home",
+  "img": "covers/dont.webp",
+  "url": "truffled/donottakethiscathomewebport/index.html"
+ },
+ {
+  "name": "Doge Miner",
+  "img": "covers/doge.webp",
+  "url": "truffled/dogeminer/Doge Miner.html"
+ },
+ {
+  "name": "Doge Miner 2",
+  "img": "covers/dogeminer2.webp",
+  "url": "truffled/dogeminer2/dm2.html"
+ },
+ {
+  "name": "Dome Keeper",
+  "img": "covers/domekeeper.webp",
+  "url": "truffled/domekeeperwebport/index.html"
+ },
+ {
+  "name": "Doodle Jump",
+  "img": "covers/doodle.webp",
+  "url": "truffled/doodlejump/Doodle Jump.html"
+ },
+ {
+  "name": "Doom",
+  "img": "covers/doom.webp",
+  "url": "truffled/doom/index.html"
+ },
+ {
+  "name": "Doom 2",
+  "img": "covers/doom2.webp",
+  "url": "truffled/doom2/doom2.html"
+ },
+ {
+  "name": "Doom 3",
+  "img": "covers/doom3.webp",
+  "url": "truffled/doom3/index.html"
+ },
+ {
+  "name": "Doom 64",
+  "img": "covers/doom64.webp",
+  "url": "truffled/doom64/doom64.html"
+ },
+ {
+  "name": "Dr. Mario",
+  "img": "covers/drmario.webp",
+  "url": "truffled/drmario/drmario.html"
+ },
+ {
+  "name": "Dreadhead Parkour",
+  "img": "covers/dread.webp",
+  "url": "truffled/dreadheadparkour/dread.html"
+ },
+ {
+  "name": "Drift Boss",
+  "img": "covers/driftboss.webp",
+  "url": "truffled/driftboss/index.html"
+ },
+ {
+  "name": "Drift Hunter",
+  "img": "covers/hunt.webp",
+  "url": "truffled/drifthunter/drift.html"
+ },
+ {
+  "name": "Drive Mad",
+  "img": "covers/drive.webp",
+  "url": "truffled/drivemad/index.html"
+ },
+ {
+  "name": "Duck Life 1",
+  "img": "covers/duck1.webp",
+  "url": "truffled/ducklife1/index.html"
+ },
+ {
+  "name": "Duck Life 2",
+  "img": "covers/duck2.webp",
+  "url": "truffled/ducklife2/index.html"
+ },
+ {
+  "name": "Duck Life 3",
+  "img": "covers/duck3.webp",
+  "url": "truffled/ducklife3/index.html"
+ },
+ {
+  "name": "Duck Life 4",
+  "img": "covers/duck4.webp",
+  "url": "truffled/ducklife4/index.html"
+ },
+ {
+  "name": "Duck Life 5",
+  "img": "covers/duck5.webp",
+  "url": "truffled/ducklife5/index.html"
+ },
+ {
+  "name": "Duck Life 6",
+  "img": "covers/ducklife6.webp",
+  "url": "truffled/ducklife6/index.html"
+ },
+ {
+  "name": "Duck Life 7",
+  "img": "covers/ducklife7.webp",
+  "url": "truffled/ducklife7/index.html"
+ },
+ {
+  "name": "Duck Life 8",
+  "img": "",
+  "url": "truffled/ducklife8webport/index.html"
+ },
+ {
+  "name": "Dumb Ways To Die",
+  "img": "covers/dumb.webp",
+  "url": "truffled/dumbwaystodie/index.html"
+ },
+ {
+  "name": "Eggy Car",
+  "img": "covers/eggycar.webp",
+  "url": "truffled/eggycar/eggycar.html"
+ },
+ {
+  "name": "Escape Road",
+  "img": "covers/road.webp",
+  "url": "truffled/escaperoad/escape.html"
+ },
+ {
+  "name": "Escape Road 2",
+  "img": "covers/escape2.webp",
+  "url": "truffled/escaperoad2/road2.html"
+ },
+ {
+  "name": "Escape Road 3",
+  "img": "",
+  "url": "truffled/escaperoad3/escape3.html"
+ },
+ {
+  "name": "Escape Road City 2",
+  "img": "covers/roadcity.webp",
+  "url": "truffled/escaperoadcity2/roadcity2.html"
+ },
+ {
+  "name": "Falling Fred",
+  "img": "covers/super-falling-fred.webp",
+  "url": "truffled/fallingfred/index.html"
+ },
+ {
+  "name": "Fallout",
+  "img": "covers/fallout.webp",
+  "url": "truffled/fallout/falloutt.html"
+ },
+ {
+  "name": "Fallout 2",
+  "img": "covers/fallout2.webp",
+  "url": "truffled/fallout2webport/index.html"
+ },
+ {
+  "name": "Fancy Pants Adventures",
+  "img": "covers/fpa1.webp",
+  "url": "truffled/fancypantsadventures/index.html"
+ },
+ {
+  "name": "Fancy Pants Adventures 2",
+  "img": "covers/fancy2.webp",
+  "url": "truffled/fancypantsadventures2/index.html"
+ },
+ {
+  "name": "Fancy Pants Adventures 3",
+  "img": "covers/fpa3.webp",
+  "url": "truffled/fancypantsadventures3/fpa3.html"
+ },
+ {
+  "name": "Fears To Fathom: Home Alone",
+  "img": "covers/fear.webp",
+  "url": "truffled/fearstofathomhomealonewebport/index.html"
+ },
+ {
+  "name": "FEZ",
+  "img": "",
+  "url": "truffled/fezwebport/index.html"
+ },
+ {
+  "name": "Final Fantasy VII",
+  "img": "covers/ffvii.webp",
+  "url": "truffled/finalfantasyvii/ffvii.html"
+ },
+ {
+  "name": "Fireboy and Watergirl",
+  "img": "covers/fire1.webp",
+  "url": "truffled/fireboyandwatergirl/index.html"
+ },
+ {
+  "name": "Fireboy and Watergirl 2",
+  "img": "covers/fire2.webp",
+  "url": "truffled/fireboyandwatergirl2/index.html"
+ },
+ {
+  "name": "Fireboy and Watergirl 3",
+  "img": "covers/fire3.webp",
+  "url": "truffled/fireboyandwatergirl3/index.html"
+ },
+ {
+  "name": "Fireboy and Watergirl 4",
+  "img": "covers/fire4.webp",
+  "url": "truffled/fireboyandwatergirl4/index.html"
+ },
+ {
+  "name": "FISH",
+  "img": "covers/fish.webp",
+  "url": "truffled/fishwebport/fish.html"
+ },
+ {
+  "name": "Five Nights At Candys",
+  "img": "covers/fnac.webp",
+  "url": "truffled/fivenightsatcandys/fnac.html"
+ },
+ {
+  "name": "Five Nights At Candys 2",
+  "img": "covers/fnac2.webp",
+  "url": "truffled/fivenightsatcandys2/fnac2.html"
+ },
+ {
+  "name": "Five Nights At Epsteins",
+  "img": "covers/fnae.webp",
+  "url": "truffled/fivenightsatepsteinswebport/fnae.html"
+ },
+ {
+  "name": "Five Nights At Frickbears 3",
+  "img": "",
+  "url": "truffled/fivenightsatfrickbears3webport/index.html"
+ },
+ {
+  "name": "Five Nights At Last Breath",
+  "img": "covers/breath.webp",
+  "url": "truffled/fivenightsatlastbreathwebport/breath.html"
+ },
+ {
+  "name": "Flappy bird",
+  "img": "covers/flapp.webp",
+  "url": "truffled/flappybird/index.html"
+ },
+ {
+  "name": "Flying Gorilla",
+  "img": "covers/flying.webp",
+  "url": "truffled/flyinggorillawebport/gorilla.html"
+ },
+ {
+  "name": "FNAF",
+  "img": "",
+  "url": "truffled/fnaf/index.html"
+ },
+ {
+  "name": "FNAF Sisters Location",
+  "img": "covers/sister.webp",
+  "url": "truffled/fnafsisterslocation/fnafs.html"
+ },
+ {
+  "name": "FNAF Ultimate Custom Night",
+  "img": "",
+  "url": "truffled/fnafultimatecustomnight/fnafu.html"
+ },
+ {
+  "name": "FNAF World",
+  "img": "covers/fnafworld.webp",
+  "url": "truffled/fnafworld/fnafw.html"
+ },
+ {
+  "name": "FNAF World Refreshed",
+  "img": "covers/fnafworld.webp",
+  "url": "truffled/fnafworldrefreshed/index.html"
+ },
+ {
+  "name": "FNAF2",
+  "img": "covers/fnaf2.webp",
+  "url": "truffled/fnaf2/index.html"
+ },
+ {
+  "name": "FNAF3",
+  "img": "",
+  "url": "truffled/fnaf3/index.html"
+ },
+ {
+  "name": "FNAF4",
+  "img": "covers/fnaf4.webp",
+  "url": "truffled/fnaf4/index.html"
+ },
+ {
+  "name": "FNAF4 Halloween",
+  "img": "covers/fnaf4.webp",
+  "url": "truffled/fnaf4halloween/ween.html"
+ },
+ {
+  "name": "FNAW",
+  "img": "covers/fnaw.webp",
+  "url": "truffled/fnaw/fnaw.html"
+ },
+ {
+  "name": "FNF, Friday Night Funkin",
+  "img": "covers/fnf.webp",
+  "url": "truffled/fnffridaynightfunkin/fnfog.html"
+ },
+ {
+  "name": "Football Bros",
+  "img": "covers/footbros.webp",
+  "url": "truffled/footballbros/index.html"
+ },
+ {
+  "name": "Friday Night Funkin Aethos",
+  "img": "",
+  "url": "truffled/fridaynightfunkinaethos/aethos.html"
+ },
+ {
+  "name": "Friday Night Funkin Atrocity",
+  "img": "",
+  "url": "truffled/fridaynightfunkinatrocity/atrocity.html"
+ },
+ {
+  "name": "Friday Night Funkin BFDI 26",
+  "img": "",
+  "url": "truffled/fridaynightfunkinbfdi26/bfdi26.html"
+ },
+ {
+  "name": "Friday Night Funkin Bop City",
+  "img": "covers/bopcity.webp",
+  "url": "truffled/fridaynightfunkinbopcity/bopcity.html"
+ },
+ {
+  "name": "Friday Night Funkin For A BFDI",
+  "img": "",
+  "url": "truffled/fridaynightfunkinforabfdi/ffabfdi.html"
+ },
+ {
+  "name": "Friday Night Funkin Garcello",
+  "img": "",
+  "url": "truffled/fridaynightfunkingarcello/garcello.html"
+ },
+ {
+  "name": "Friday Night Funkin Get Digging",
+  "img": "",
+  "url": "truffled/fridaynightfunkingetdigging/getdigging.html"
+ },
+ {
+  "name": "Friday Night Funkin Golden Apple",
+  "img": "",
+  "url": "truffled/fridaynightfunkingoldenapple/goldenapple.html"
+ },
+ {
+  "name": "Friday Night Funkin Hatsune Miku",
+  "img": "",
+  "url": "truffled/fridaynightfunkinhatsunemiku/miku.html"
+ },
+ {
+  "name": "Friday Night Funkin Hex",
+  "img": "",
+  "url": "truffled/fridaynightfunkinhex/hex.html"
+ },
+ {
+  "name": "Friday Night Funkin Horkglorpgloop",
+  "img": "",
+  "url": "truffled/fridaynightfunkinhorkglorpgloop/horkglorpgloop.html"
+ },
+ {
+  "name": "Friday Night Funkin Infinite Irida",
+  "img": "",
+  "url": "truffled/fridaynightfunkininfiniteirida/infiniteiridra.html"
+ },
+ {
+  "name": "Friday Night Funkin Kapi",
+  "img": "",
+  "url": "truffled/fridaynightfunkinkapi/kapi.html"
+ },
+ {
+  "name": "Friday Night Funkin Mario Madness",
+  "img": "",
+  "url": "truffled/fridaynightfunkinmariomadness/mariomadness.html"
+ },
+ {
+  "name": "Friday Night Funkin Nonsense",
+  "img": "",
+  "url": "truffled/fridaynightfunkinnonsense/nonsense.html"
+ },
+ {
+  "name": "Friday Night Funkin Rewrite",
+  "img": "",
+  "url": "truffled/fridaynightfunkinrewrite/rewrite.html"
+ },
+ {
+  "name": "Friday Night Funkin Rewrite 2",
+  "img": "",
+  "url": "truffled/fridaynightfunkinrewrite2/rewrite2.html"
+ },
+ {
+  "name": "Friday Night Funkin Ron",
+  "img": "",
+  "url": "truffled/fridaynightfunkinron/ron.html"
+ },
+ {
+  "name": "Friday Night Funkin Shaggy",
+  "img": "",
+  "url": "truffled/fridaynightfunkinshaggy/shaggy.html"
+ },
+ {
+  "name": "Friday Night Funkin Shaggy X Matt",
+  "img": "",
+  "url": "truffled/fridaynightfunkinshaggyxmatt/shaggyxmatt.html"
+ },
+ {
+  "name": "Friday Night Funkin Shucks V2",
+  "img": "",
+  "url": "truffled/fridaynightfunkinshucksv2/shucksv2.html"
+ },
+ {
+  "name": "Friday Night Funkin Tricky",
+  "img": "",
+  "url": "truffled/fridaynightfunkintricky/tricky.html"
+ },
+ {
+  "name": "Friday Night Funkin TWIDDLEFINGER",
+  "img": "",
+  "url": "truffled/fridaynightfunkintwiddlefinger/TWIDDLEFINGER.html"
+ },
+ {
+  "name": "Friday Night Funkin Vs. Tord",
+  "img": "",
+  "url": "truffled/fridaynightfunkinvstord/tord.html"
+ },
+ {
+  "name": "Friday Night Funkin Whitty",
+  "img": "",
+  "url": "truffled/fridaynightfunkinwhitty/whitty.html"
+ },
+ {
+  "name": "Friday Night Funkin Zardy",
+  "img": "",
+  "url": "truffled/fridaynightfunkinzardy/zardy.html"
+ },
+ {
+  "name": "Fruit Ninja",
+  "img": "covers/ninja.webp",
+  "url": "truffled/fruitninja/index.html"
+ },
+ {
+  "name": "Fused240",
+  "img": "covers/fused240.webp",
+  "url": "truffled/fused240/index.html"
+ },
+ {
+  "name": "Gabriel's Awesome Schoolhouse",
+  "img": "covers/gabriel.webp",
+  "url": "truffled/gabrielsawesomeschoolhousewebport/gash.html"
+ },
+ {
+  "name": "Gacha Life",
+  "img": "covers/gachalife.webp",
+  "url": "truffled/gachalife/life.html"
+ },
+ {
+  "name": "Gacha Verse",
+  "img": "covers/gachaverse.webp",
+  "url": "truffled/gachaverse/verse.html"
+ },
+ {
+  "name": "Geometry Dash",
+  "img": "covers/gd.webp",
+  "url": "truffled/geometrydashwebport/gd.html"
+ },
+ {
+  "name": "Getaway Shootout",
+  "img": "covers/getaway.webp",
+  "url": "truffled/getawayshootout/index.html"
+ },
+ {
+  "name": "Getting Over It",
+  "img": "covers/gettin.webp",
+  "url": "truffled/gettingoveritwebport/goi.html"
+ },
+ {
+  "name": "Gladihoppers",
+  "img": "covers/glad.webp",
+  "url": "truffled/gladihoppers/Gladihoppers.html"
+ },
+ {
+  "name": "Go to bed",
+  "img": "covers/gotobed.webp",
+  "url": "truffled/gotobedwebport/index.html"
+ },
+ {
+  "name": "Google Baseball",
+  "img": "covers/google.webp",
+  "url": "truffled/googlebaseball/gbase.html"
+ },
+ {
+  "name": "Gorilla Tag",
+  "img": "covers/gtag.webp",
+  "url": "truffled/gorillatagwebport/index.html"
+ },
+ {
+  "name": "Granny",
+  "img": "covers/granny.webp",
+  "url": "truffled/granny/granny.html"
+ },
+ {
+  "name": "Granny 2",
+  "img": "covers/gran2.webp",
+  "url": "truffled/granny2/Granny 2.html"
+ },
+ {
+  "name": "Granny 3",
+  "img": "covers/gran3.webp",
+  "url": "truffled/granny3/Granny 3.html"
+ },
+ {
+  "name": "Gravity run",
+  "img": "covers/gravity.webp",
+  "url": "truffled/gravityrun/index.html"
+ },
+ {
+  "name": "Greybox",
+  "img": "covers/grey.webp",
+  "url": "truffled/greybox/index.html"
+ },
+ {
+  "name": "GTA I",
+  "img": "covers/gta.webp",
+  "url": "truffled/gtai/index.html"
+ },
+ {
+  "name": "GTA II",
+  "img": "covers/gta2.webp",
+  "url": "truffled/gtaii/index.html"
+ },
+ {
+  "name": "GTA III",
+  "img": "covers/gta3.webp",
+  "url": "truffled/gtaiii/index.html"
+ },
+ {
+  "name": "GTA San Andreas",
+  "img": "covers/gtasan.webp",
+  "url": "truffled/gtasanandreas/index.html"
+ },
+ {
+  "name": "GTA Vice City",
+  "img": "covers/vice.webp",
+  "url": "truffled/gtavicecitywebport/index.html"
+ },
+ {
+  "name": "Gun Mayhem",
+  "img": "covers/gun.webp",
+  "url": "truffled/gunmayhem/index.html"
+ },
+ {
+  "name": "Gun Mayhem 2",
+  "img": "covers/gun2.webp",
+  "url": "truffled/gunmayhem2/index.html"
+ },
+ {
+  "name": "Gun Mayhem Redux",
+  "img": "",
+  "url": "truffled/gunmayhemredux/index.html"
+ },
+ {
+  "name": "Gunspin",
+  "img": "covers/guns.webp",
+  "url": "truffled/gunspin/index.html"
+ },
+ {
+  "name": "Half life",
+  "img": "covers/halflife.webp",
+  "url": "truffled/halflife/index.html"
+ },
+ {
+  "name": "Half life 2",
+  "img": "covers/halflife.webp",
+  "url": "truffled/halflife2/index.html"
+ },
+ {
+  "name": "Half life: Opposing Force",
+  "img": "covers/hlof.webp",
+  "url": "truffled/halflifeopposingforce/hlof.html"
+ },
+ {
+  "name": "Happy Wheels",
+  "img": "covers/happy.webp",
+  "url": "truffled/happywheels/index.html"
+ },
+ {
+  "name": "Helltaker",
+  "img": "",
+  "url": "truffled/helltakerwebport/helltaker.html"
+ },
+ {
+  "name": "Hobo 1",
+  "img": "",
+  "url": "truffled/hobo1/hobo1.html"
+ },
+ {
+  "name": "Hobo 2",
+  "img": "",
+  "url": "truffled/hobo2/hobo2.html"
+ },
+ {
+  "name": "Hobo 3",
+  "img": "",
+  "url": "truffled/hobo3/hobo3.html"
+ },
+ {
+  "name": "Hobo 4",
+  "img": "",
+  "url": "truffled/hobo4/hobo4.html"
+ },
+ {
+  "name": "Hobo 5",
+  "img": "",
+  "url": "truffled/hobo5/hobo5.html"
+ },
+ {
+  "name": "Hobo 6",
+  "img": "",
+  "url": "truffled/hobo6/hobo6.html"
+ },
+ {
+  "name": "Hobo 7",
+  "img": "",
+  "url": "truffled/hobo7/hobo7.html"
+ },
+ {
+  "name": "Hollow Knight",
+  "img": "covers/hollow.webp",
+  "url": "truffled/hollowknightwebport/index.html"
+ },
+ {
+  "name": "Hotline Miami",
+  "img": "covers/hot.webp",
+  "url": "truffled/hotlinemiamiwebport/index.html"
+ },
+ {
+  "name": "House Of Hazards",
+  "img": "covers/house.webp",
+  "url": "truffled/houseofhazards/index.html"
+ },
+ {
+  "name": "HUMAN EXPENDITURE PROGRAM",
+  "img": "covers/human.webp",
+  "url": "truffled/humanexpenditureprogramwebport/human.html"
+ },
+ {
+  "name": "Ice Baby Quest 2",
+  "img": "covers/icebaby2.webp",
+  "url": "truffled/icebabyquest2/index.html"
+ },
+ {
+  "name": "Idle Breakout",
+  "img": "covers/idle.webp",
+  "url": "truffled/idlebreakout/index.html"
+ },
+ {
+  "name": "Iron Lung",
+  "img": "covers/iroonlung.webp",
+  "url": "truffled/ironlungwebport/index.html"
+ },
+ {
+  "name": "Jeffrey Epstein Basics In Education And Kidnapping",
+  "img": "covers/jeb.webp",
+  "url": "truffled/jeffreyepsteinbasicsineducationandkidnappingwebport/jeb.html"
+ },
+ {
+  "name": "Jeffys Basics",
+  "img": "covers/jeffys.webp",
+  "url": "truffled/jeffysbasicswebport/index.html"
+ },
+ {
+  "name": "Jelly Drift",
+  "img": "covers/jelly.webp",
+  "url": "truffled/jellydrift/jelly.html"
+ },
+ {
+  "name": "Jetpack Joyride",
+  "img": "covers/jet.webp",
+  "url": "truffled/jetpackjoyride/index.html"
+ },
+ {
+  "name": "Jumbo Mario",
+  "img": "covers/jumbo.webp",
+  "url": "truffled/jumbomario/index.html"
+ },
+ {
+  "name": "Karlson",
+  "img": "covers/karlson.webp",
+  "url": "truffled/karlsonwebport/Karlson.html"
+ },
+ {
+  "name": "Karlson2D",
+  "img": "covers/karlson2d.webp",
+  "url": "truffled/karlson2dwebport/index.html"
+ },
+ {
+  "name": "Kick The Buddy",
+  "img": "",
+  "url": "truffled/kickthebuddywebport/index.html"
+ },
+ {
+  "name": "Kindergarten 1",
+  "img": "covers/kind1.webp",
+  "url": "truffled/kindergarten1webport/index.html"
+ },
+ {
+  "name": "Kindergarten 2",
+  "img": "covers/kind2.webp",
+  "url": "truffled/kindergarten2webport/index.html"
+ },
+ {
+  "name": "Kindergarten 3",
+  "img": "covers/kind3.webp",
+  "url": "truffled/kindergarten3webport/index.html"
+ },
+ {
+  "name": "Kirby Soft And Wet",
+  "img": "covers/kirbysoftandwet.webp",
+  "url": "truffled/kirbysoftandwetwebport/kirbysoftandwet.html"
+ },
+ {
+  "name": "Klifur",
+  "img": "",
+  "url": "truffled/klifur/index.html"
+ },
+ {
+  "name": "Lacey's Flash Games",
+  "img": "covers/lacey.webp",
+  "url": "truffled/laceysflashgameswebport/lacy.html"
+ },
+ {
+  "name": "Learn To Fly",
+  "img": "covers/learn1.webp",
+  "url": "truffled/learntofly/index.html"
+ },
+ {
+  "name": "Learn To Fly 2",
+  "img": "covers/learn2.webp",
+  "url": "truffled/learntofly2/index.html"
+ },
+ {
+  "name": "Learn To Fly 3",
+  "img": "covers/learn3.webp",
+  "url": "truffled/learntofly3/index.html"
+ },
+ {
+  "name": "Learn To Fly Idle",
+  "img": "covers/learni.webp",
+  "url": "truffled/learntoflyidle/index.html"
+ },
+ {
+  "name": "Lego Star Wars",
+  "img": "covers/legostarwars.webp",
+  "url": "truffled/legostarwars/legostarwars.html"
+ },
+ {
+  "name": "Level Devil",
+  "img": "covers/level.webp",
+  "url": "truffled/leveldevil/index.html"
+ },
+ {
+  "name": "Line Rider",
+  "img": "covers/line.webp",
+  "url": "truffled/linerider/index.html"
+ },
+ {
+  "name": "Little Alchemy",
+  "img": "covers/lil.webp",
+  "url": "truffled/littlealchemy/index.html"
+ },
+ {
+  "name": "Little Alchemy 2",
+  "img": "covers/little2.webp",
+  "url": "truffled/littlealchemy2/little2.html"
+ },
+ {
+  "name": "Little Big Planet",
+  "img": "covers/lbp.webp",
+  "url": "truffled/littlebigplanet/index.html"
+ },
+ {
+  "name": "Madness Melee",
+  "img": "covers/madness.webp",
+  "url": "truffled/madnessmelee/index.html"
+ },
+ {
+  "name": "Mario Kart 64",
+  "img": "covers/mk64.webp",
+  "url": "truffled/mariokart64/index.html"
+ },
+ {
+  "name": "Mario Kart 7",
+  "img": "covers/mk7.webp",
+  "url": "truffled/mariokart7/index.html"
+ },
+ {
+  "name": "Mario Kart DS",
+  "img": "covers/mkds.webp",
+  "url": "truffled/mariokartds/index.html"
+ },
+ {
+  "name": "Mario Party 1",
+  "img": "covers/marioparty1.webp",
+  "url": "truffled/marioparty1/marioparty.html"
+ },
+ {
+  "name": "Mario Party 2",
+  "img": "covers/marioparty2.webp",
+  "url": "truffled/marioparty2/marioparty2.html"
+ },
+ {
+  "name": "Mario Party 3",
+  "img": "covers/marioparty3.webp",
+  "url": "truffled/marioparty3/marioparty3.html"
+ },
+ {
+  "name": "Megaman",
+  "img": "covers/megaman.webp",
+  "url": "truffled/megaman/megaman.html"
+ },
+ {
+  "name": "Melon Playground",
+  "img": "covers/melon.webp",
+  "url": "truffled/melonplayground/index.html"
+ },
+ {
+  "name": "Merge Rot",
+  "img": "covers/rot.webp",
+  "url": "truffled/mergerot/index.html"
+ },
+ {
+  "name": "Milkman karlson",
+  "img": "covers/milk.webp",
+  "url": "truffled/milkmankarlsonwebport/index.html"
+ },
+ {
+  "name": "Minecraft 1.12.2",
+  "img": "",
+  "url": "truffled/minecraft1122/index.html"
+ },
+ {
+  "name": "Minecraft 1.8.8",
+  "img": "",
+  "url": "truffled/minecraft188/index.html"
+ },
+ {
+  "name": "Minecraft Legacy Console Edition",
+  "img": "",
+  "url": "truffled/minecraftlegacyconsoleeditionwebport/index.html"
+ },
+ {
+  "name": "Minecraft Pocket Edition",
+  "img": "covers/mcpe.webp",
+  "url": "truffled/minecraftpocketeditionwebport/index.html"
+ },
+ {
+  "name": "Minecraft Wurst",
+  "img": "",
+  "url": "truffled/minecraftwurst/clwurst.html"
+ },
+ {
+  "name": "Minesweeper Mania",
+  "img": "covers/minese.webp",
+  "url": "truffled/minesweepermania/minesweepermania.html"
+ },
+ {
+  "name": "Minesweeper Plus",
+  "img": "covers/mineseplu.webp",
+  "url": "truffled/minesweeperpluswebport/mineplus.html"
+ },
+ {
+  "name": "Miside",
+  "img": "",
+  "url": "truffled/misidewebport/miside.html"
+ },
+ {
+  "name": "Monkey Mart",
+  "img": "covers/monkb.webp",
+  "url": "truffled/monkeymart/index.html"
+ },
+ {
+  "name": "Moto X3M",
+  "img": "covers/moto.webp",
+  "url": "truffled/motox3m/index.html"
+ },
+ {
+  "name": "My teardrop, daniel",
+  "img": "covers/mytear.webp",
+  "url": "truffled/myteardropdaniel/mytear.html"
+ },
+ {
+  "name": "n-gon",
+  "img": "covers/ngon.webp",
+  "url": "truffled/ngon/index.html"
+ },
+ {
+  "name": "Nazi Zombies: Portable",
+  "img": "covers/nazi.webp",
+  "url": "truffled/nazizombiesportable/nzp.html"
+ },
+ {
+  "name": "Needy Streamer Overload",
+  "img": "",
+  "url": "truffled/needystreameroverloadwebport/index.html"
+ },
+ {
+  "name": "New Super Mario Bros",
+  "img": "covers/nsmb.webp",
+  "url": "truffled/newsupermariobros/index.html"
+ },
+ {
+  "name": "Node Buster",
+  "img": "covers/nodebuster.webp",
+  "url": "truffled/nodebusterwebport/index.html"
+ },
+ {
+  "name": "Nubbys Number Factory",
+  "img": "covers/nubby.webp",
+  "url": "truffled/nubbysnumberfactorywebport/nubby.html"
+ },
+ {
+  "name": "Om Nom Run",
+  "img": "covers/omnomrun.webp",
+  "url": "truffled/omnomrun/omnomrun.html"
+ },
+ {
+  "name": "OMORI",
+  "img": "covers/omori.webp",
+  "url": "truffled/omoriwebport/OMORI.html"
+ },
+ {
+  "name": "Oneshot World Machine Edition",
+  "img": "",
+  "url": "truffled/oneshotworldmachineeditionwebport/index.html"
+ },
+ {
+  "name": "Oneshot",
+  "img": "covers/oneshot.webp",
+  "url": "truffled/oneshotwebport/oneshot.html"
+ },
+ {
+  "name": "Orange Roulette",
+  "img": "covers/orange.webp",
+  "url": "truffled/orangeroulette/orange.html"
+ },
+ {
+  "name": "Oshi Oshi Punch",
+  "img": "covers/oshi.webp",
+  "url": "truffled/oshioshipunch/onshi.html"
+ },
+ {
+  "name": "Osu!",
+  "img": "covers/osu.webp",
+  "url": "truffled/osu/index.html"
+ },
+ {
+  "name": "Overburden",
+  "img": "covers/overburden.webp",
+  "url": "truffled/overburdenwebport/overburden.html"
+ },
+ {
+  "name": "OvO",
+  "img": "covers/ovo.webp",
+  "url": "truffled/ovo/index.html"
+ },
+ {
+  "name": "OvO 2",
+  "img": "covers/ovo2.webp",
+  "url": "truffled/ovo2/index.html"
+ },
+ {
+  "name": "OvO Dimensions",
+  "img": "covers/ovodi.webp",
+  "url": "truffled/ovodimensions/index.html"
+ },
+ {
+  "name": "Pacman",
+  "img": "covers/pacman.webp",
+  "url": "truffled/pacman/index.html"
+ },
+ {
+  "name": "Pacman World",
+  "img": "covers/pacmanworld.webp",
+  "url": "truffled/pacmanworld/pacmanw.html"
+ },
+ {
+  "name": "Pacman World 2",
+  "img": "covers/pacmanworld2.webp",
+  "url": "truffled/pacmanworld2/pacmanw2.html"
+ },
+ {
+  "name": "Paint Gal Adventures",
+  "img": "covers/paintgal.webp",
+  "url": "truffled/paintgaladventures/Paint Gal Adventures.html"
+ },
+ {
+  "name": "Papas Bakeria",
+  "img": "covers/bake.webp",
+  "url": "truffled/papasbakeria/index.html"
+ },
+ {
+  "name": "Papas Burgeria",
+  "img": "covers/burger.webp",
+  "url": "truffled/papasburgeria/index.html"
+ },
+ {
+  "name": "Papas Cheeseria",
+  "img": "",
+  "url": "truffled/papascheeseria/index.html"
+ },
+ {
+  "name": "Papas Donuteria",
+  "img": "covers/donut.webp",
+  "url": "truffled/papasdonuteria/index.html"
+ },
+ {
+  "name": "Papas Freezeria",
+  "img": "covers/freeze.webp",
+  "url": "truffled/papasfreezeria/index.html"
+ },
+ {
+  "name": "Papas Pizzaeria",
+  "img": "covers/pizza.webp",
+  "url": "truffled/papaspizzaeria/index.html"
+ },
+ {
+  "name": "Paper Mario",
+  "img": "covers/papermario.webp",
+  "url": "truffled/papermario/papermario.html"
+ },
+ {
+  "name": "Paperio 2",
+  "img": "covers/paperio2.webp",
+  "url": "truffled/paperio2/index.html"
+ },
+ {
+  "name": "Papers, Please",
+  "img": "covers/papers.webp",
+  "url": "truffled/papersplease/papers.html"
+ },
+ {
+  "name": "Parappa The Rapper",
+  "img": "covers/rapper.webp",
+  "url": "truffled/parappatherapper/index.html"
+ },
+ {
+  "name": "Parappa The Rapper 2",
+  "img": "covers/parappa2.webp",
+  "url": "truffled/parappatherapper2/index.html"
+ },
+ {
+  "name": "Peaks of Yore",
+  "img": "covers/peaksofyore.webp",
+  "url": "truffled/peaksofyorewebport/peaksofyore.html"
+ },
+ {
+  "name": "Peggle",
+  "img": "covers/peggle.webp",
+  "url": "truffled/peggle/Peggle.html"
+ },
+ {
+  "name": "People Playground",
+  "img": "covers/peoplepg.webp",
+  "url": "truffled/peopleplaygroundwebport/index.html"
+ },
+ {
+  "name": "Pikuniku",
+  "img": "",
+  "url": "truffled/pikunikuwebport/index.html"
+ },
+ {
+  "name": "Pixel Gun 3D",
+  "img": "covers/pixelgun.webp",
+  "url": "truffled/pixelgun3d/index.html"
+ },
+ {
+  "name": "Pizza Tower",
+  "img": "covers/pizzatower.webp",
+  "url": "truffled/pizzatowerwebport/Pizza Tower.html"
+ },
+ {
+  "name": "Pizza Tower: Scoutdigo",
+  "img": "covers/pts.webp",
+  "url": "truffled/pizzatowerscoutdigo/pts.html"
+ },
+ {
+  "name": "Plants VS Zombies",
+  "img": "covers/pvz.webp",
+  "url": "truffled/plantsvszombies/pvs.html"
+ },
+ {
+  "name": "Plants VS Zombies Garden Endless",
+  "img": "covers/pvz2.webp",
+  "url": "truffled/plantsvszombiesgardenendless/index.html"
+ },
+ {
+  "name": "Plauge Inc",
+  "img": "",
+  "url": "truffled/plaugeincwebport/index.html"
+ },
+ {
+  "name": "Pokemon Academy Life Forever",
+  "img": "covers/pokemonacademy.webp",
+  "url": "truffled/pokemonacademylifeforever/pokemonacademy.html"
+ },
+ {
+  "name": "Pokemon Blue",
+  "img": "covers/blue.webp",
+  "url": "truffled/pokemonblue/blue.html"
+ },
+ {
+  "name": "Pokemon Crystal",
+  "img": "covers/crystal.webp",
+  "url": "truffled/pokemoncrystal/blob.html"
+ },
+ {
+  "name": "Pokemon Emerald",
+  "img": "covers/em.webp",
+  "url": "truffled/pokemonemerald/em.html"
+ },
+ {
+  "name": "Pokemon Gold",
+  "img": "covers/gold.webp",
+  "url": "truffled/pokemongold/red.html"
+ },
+ {
+  "name": "Pokemon Red",
+  "img": "",
+  "url": "truffled/pokemonred/red.html"
+ },
+ {
+  "name": "Pokemon Stadium",
+  "img": "",
+  "url": "truffled/pokemonstadium/pokestad.html"
+ },
+ {
+  "name": "Pokemon Stadium 2",
+  "img": "",
+  "url": "truffled/pokemonstadium2/pokestad2.html"
+ },
+ {
+  "name": "Polytrack",
+  "img": "covers/poly.webp",
+  "url": "truffled/polytrack/index.html"
+ },
+ {
+  "name": "Portal",
+  "img": "covers/portal.webp",
+  "url": "truffled/portal/index.html"
+ },
+ {
+  "name": "Postal",
+  "img": "covers/postal.webp",
+  "url": "truffled/postalwebport/postal.html"
+ },
+ {
+  "name": "Pretend its not there",
+  "img": "covers/pre.webp",
+  "url": "truffled/pretenditsnottherewebport/index.html"
+ },
+ {
+  "name": "Quake",
+  "img": "covers/quake.webp",
+  "url": "truffled/quake/index.html"
+ },
+ {
+  "name": "Quake II",
+  "img": "covers/quakeii.webp",
+  "url": "truffled/quakeii/index.html"
+ },
+ {
+  "name": "Quake III",
+  "img": "covers/quakeiii.webp",
+  "url": "truffled/quakeiii/Quake3.htm"
+ },
+ {
+  "name": "Raft Wars",
+  "img": "covers/raft1.webp",
+  "url": "truffled/raftwars/index.html"
+ },
+ {
+  "name": "Raft Wars 2",
+  "img": "covers/raft2.webp",
+  "url": "truffled/raftwars2/index.html"
+ },
+ {
+  "name": "RAFT",
+  "img": "covers/raft.webp",
+  "url": "truffled/raftwebport/index.html"
+ },
+ {
+  "name": "Ragdoll Archers",
+  "img": "covers/archer.webp",
+  "url": "truffled/ragdollarchers/index.html"
+ },
+ {
+  "name": "Ragdoll Hit",
+  "img": "covers/hit.webp",
+  "url": "truffled/ragdollhit/index.html"
+ },
+ {
+  "name": "Raldi's Crack House",
+  "img": "covers/raldi.webp",
+  "url": "truffled/raldiscrackhouse/index.html"
+ },
+ {
+  "name": "Rayman",
+  "img": "covers/rayman.webp",
+  "url": "truffled/rayman/rayman.html"
+ },
+ {
+  "name": "RE:RUN",
+  "img": "covers/rerun.webp",
+  "url": "truffled/rerunwebport/index.html"
+ },
+ {
+  "name": "REPO",
+  "img": "covers/repo.webp",
+  "url": "truffled/repowebport/index.html"
+ },
+ {
+  "name": "Resident Evil 1",
+  "img": "covers/res1.webp",
+  "url": "truffled/residentevil1/res1.html"
+ },
+ {
+  "name": "Resident Evil 2",
+  "img": "covers/res2.webp",
+  "url": "truffled/residentevil2/res2.html"
+ },
+ {
+  "name": "Retro Bowl",
+  "img": "covers/retro.webp",
+  "url": "truffled/retrobowl/index.html"
+ },
+ {
+  "name": "Retro Bowl College",
+  "img": "covers/retroc.webp",
+  "url": "truffled/retrobowlcollege/index.html"
+ },
+ {
+  "name": "Rhythm Heaven",
+  "img": "",
+  "url": "truffled/rhythmheaven/rhythm.html"
+ },
+ {
+  "name": "Riddle School",
+  "img": "covers/riddle1.webp",
+  "url": "truffled/riddleschool/index.html"
+ },
+ {
+  "name": "Riddle School 2",
+  "img": "covers/riddle2.webp",
+  "url": "truffled/riddleschool2/index.html"
+ },
+ {
+  "name": "Riddle School 3",
+  "img": "covers/riddle3.webp",
+  "url": "truffled/riddleschool3/index.html"
+ },
+ {
+  "name": "Riddle School 4",
+  "img": "covers/riddle4.webp",
+  "url": "truffled/riddleschool4/index.html"
+ },
+ {
+  "name": "Riddle School 5",
+  "img": "covers/riddle5.webp",
+  "url": "truffled/riddleschool5/index.html"
+ },
+ {
+  "name": "Riddle School Transfer",
+  "img": "covers/riddletr.webp",
+  "url": "truffled/riddleschooltransfer/index.html"
+ },
+ {
+  "name": "Riddle School Transfer 2",
+  "img": "covers/riddletr2.webp",
+  "url": "truffled/riddleschooltransfer2/index.html"
+ },
+ {
+  "name": "Rooftop Snipers",
+  "img": "covers/roof1.webp",
+  "url": "truffled/rooftopsnipers/index.html"
+ },
+ {
+  "name": "Rooftop Snipers 2",
+  "img": "covers/roof2.webp",
+  "url": "truffled/rooftopsnipers2/index.html"
+ },
+ {
+  "name": "Run",
+  "img": "covers/run1.webp",
+  "url": "truffled/run/run.html"
+ },
+ {
+  "name": "Run 2",
+  "img": "covers/run2.webp",
+  "url": "truffled/run2/run2.html"
+ },
+ {
+  "name": "Run 3",
+  "img": "covers/run3.webp",
+  "url": "truffled/run3/run3.html"
+ },
+ {
+  "name": "Running Fred",
+  "img": "",
+  "url": "truffled/runningfredwebport/index.html"
+ },
+ {
+  "name": "Saihate Station",
+  "img": "covers/saihatestation.webp",
+  "url": "truffled/saihatestationwebport/saihatestation.html"
+ },
+ {
+  "name": "Sandboxels",
+  "img": "covers/sand.webp",
+  "url": "truffled/sandboxels/Sandboxels.html"
+ },
+ {
+  "name": "Sanic Ball",
+  "img": "covers/sanicball.webp",
+  "url": "truffled/sanicballwebport/index.html"
+ },
+ {
+  "name": "Scary Path",
+  "img": "covers/path.webp",
+  "url": "truffled/scarypath/index.html"
+ },
+ {
+  "name": "Schoolboy Runaway",
+  "img": "covers/runaway.webp",
+  "url": "truffled/schoolboyrunawaywebport/runaway.html"
+ },
+ {
+  "name": "Shift At Midnight",
+  "img": "covers/shift.webp",
+  "url": "truffled/shiftatmidnightwebport/shift.html"
+ },
+ {
+  "name": "Silksong",
+  "img": "covers/silk.webp",
+  "url": "truffled/silksongwebport/index.html"
+ },
+ {
+  "name": "Skibidi Shooter",
+  "img": "",
+  "url": "truffled/skibidishooter/index.html"
+ },
+ {
+  "name": "Skiing Fred",
+  "img": "covers/ski.webp",
+  "url": "truffled/skiingfred/index.html"
+ },
+ {
+  "name": "Slender: The 8 Pages",
+  "img": "covers/slender.webp",
+  "url": "truffled/slenderthe8pageswebport/index.html"
+ },
+ {
+  "name": "Slendytubbies I",
+  "img": "covers/slendy.webp",
+  "url": "truffled/slendytubbiesiwebport/slendy1.html"
+ },
+ {
+  "name": "Slendytubbies II 2D",
+  "img": "",
+  "url": "truffled/slendytubbiesii2dwebport/index.html"
+ },
+ {
+  "name": "Slendytubbies II",
+  "img": "",
+  "url": "truffled/slendytubbiesiiwebport/index.html"
+ },
+ {
+  "name": "Slient Hill",
+  "img": "covers/slienthill.webp",
+  "url": "truffled/slienthill/slienthill.html"
+ },
+ {
+  "name": "Slime Ranchers",
+  "img": "covers/slime.webp",
+  "url": "truffled/slimerancherswebport/slimeranchers.html"
+ },
+ {
+  "name": "Slither.io",
+  "img": "covers/sli.webp",
+  "url": "truffled/slitheriowebport/sfge.html"
+ },
+ {
+  "name": "Slope",
+  "img": "covers/slope.webp",
+  "url": "truffled/slope/index.html"
+ },
+ {
+  "name": "Slowroads",
+  "img": "covers/slow.webp",
+  "url": "truffled/slowroads/index.html"
+ },
+ {
+  "name": "SM64, Super Mario 64",
+  "img": "covers/sm64.webp",
+  "url": "truffled/sm64supermario64/index.html"
+ },
+ {
+  "name": "Smash Karts",
+  "img": "covers/smashkarts.webp",
+  "url": "truffled/smashkarts/index.html"
+ },
+ {
+  "name": "Snow Battle",
+  "img": "covers/snow.webp",
+  "url": "truffled/snowbattle/snow.html"
+ },
+ {
+  "name": "Snow Rider 3D",
+  "img": "covers/snowio.webp",
+  "url": "truffled/snowrider3d/index.html"
+ },
+ {
+  "name": "Soccer Bros",
+  "img": "covers/soccer.webp",
+  "url": "truffled/soccerbros/index.html"
+ },
+ {
+  "name": "Soccer Random",
+  "img": "covers/soccerra.webp",
+  "url": "truffled/soccerrandom/index.html"
+ },
+ {
+  "name": "Solar Smash",
+  "img": "covers/solar.webp",
+  "url": "truffled/solarsmash/solar.html"
+ },
+ {
+  "name": "Solitaire",
+  "img": "covers/soli.webp",
+  "url": "truffled/solitaire/index.html"
+ },
+ {
+  "name": "Sonic 1",
+  "img": "covers/sonic1.webp",
+  "url": "truffled/sonic1/index.html"
+ },
+ {
+  "name": "Sonic 2",
+  "img": "covers/sonic2.webp",
+  "url": "truffled/sonic2/index.html"
+ },
+ {
+  "name": "Sonic 3",
+  "img": "covers/sonic3.webp",
+  "url": "truffled/sonic3/sonic3.html"
+ },
+ {
+  "name": "Sonic 3D Blast",
+  "img": "covers/sonic3dblast.webp",
+  "url": "truffled/sonic3dblast/sonic3dblast.html"
+ },
+ {
+  "name": "Sonic 4",
+  "img": "covers/sonic4.webp",
+  "url": "truffled/sonic4/index.html"
+ },
+ {
+  "name": "Sonic CD",
+  "img": "covers/soniccd.webp",
+  "url": "truffled/soniccd/soniccd.html"
+ },
+ {
+  "name": "Sonic EXE",
+  "img": "covers/sonicexe.webp",
+  "url": "truffled/sonicexe/sonicexe.html"
+ },
+ {
+  "name": "Sonic Jam",
+  "img": "covers/sonicjam.webp",
+  "url": "truffled/sonicjam/sonicjam.html"
+ },
+ {
+  "name": "Sonic Mania",
+  "img": "covers/mania.webp",
+  "url": "truffled/sonicmaniawebport/sonic.html"
+ },
+ {
+  "name": "Sonic R",
+  "img": "covers/sonicr.webp",
+  "url": "truffled/sonicr/sonicr.html"
+ },
+ {
+  "name": "Sonic Robo Blast 2",
+  "img": "covers/robo.webp",
+  "url": "truffled/sonicroboblast2/index.html"
+ },
+ {
+  "name": "Sonic Robo Blast 2 KART",
+  "img": "",
+  "url": "truffled/sonicroboblast2kart/index.html"
+ },
+ {
+  "name": "Sonic World Next",
+  "img": "covers/swn.webp",
+  "url": "truffled/sonicworldnext/index.html"
+ },
+ {
+  "name": "Space Waves",
+  "img": "covers/space.webp",
+  "url": "truffled/spacewaves/spacewaves.html"
+ },
+ {
+  "name": "Spaceflight Simulator",
+  "img": "",
+  "url": "truffled/spaceflightsimulatorwebport/spaceflight.html"
+ },
+ {
+  "name": "Spank the monkey, bogs favorites",
+  "img": "covers/monkey.webp",
+  "url": "truffled/spankthemonkeybogsfavorites/monkey.html"
+ },
+ {
+  "name": "Speed Stars",
+  "img": "covers/speed.webp",
+  "url": "truffled/speedstars/index.html"
+ },
+ {
+  "name": "Spelunky Classic HD",
+  "img": "covers/spelunkyclassic.webp",
+  "url": "truffled/spelunkyclassichd/spelunky.html"
+ },
+ {
+  "name": "Starbound",
+  "img": "covers/starbound.webp",
+  "url": "truffled/starboundwebport/index.html"
+ },
+ {
+  "name": "Stardew Valley",
+  "img": "covers/stardew.webp",
+  "url": "truffled/stardewvalleywebport/index.html"
+ },
+ {
+  "name": "Stick War: Legacy",
+  "img": "covers/stickwar.webp",
+  "url": "truffled/stickwarlegacy/stickwar.html"
+ },
+ {
+  "name": "Stick With It",
+  "img": "covers/stick.webp",
+  "url": "truffled/stickwithitwebport/index.html"
+ },
+ {
+  "name": "Stickman Hook",
+  "img": "covers/stickman.webp",
+  "url": "truffled/stickmanhook/index.html"
+ },
+ {
+  "name": "Subway Surfers",
+  "img": "covers/sub.webp",
+  "url": "truffled/subwaysurfers/index.html"
+ },
+ {
+  "name": "Super Hot",
+  "img": "covers/superhot.webp",
+  "url": "truffled/superhot/index.html"
+ },
+ {
+  "name": "Super Mario 64, SM64COOP",
+  "img": "",
+  "url": "truffled/supermario64sm64coop/sm64coopdx.html"
+ },
+ {
+  "name": "Super Mario Bros",
+  "img": "covers/smb.webp",
+  "url": "truffled/supermariobros/smb.html"
+ },
+ {
+  "name": "Super Mario Galaxy DS",
+  "img": "covers/smgds.webp",
+  "url": "truffled/supermariogalaxyds/smgds.html"
+ },
+ {
+  "name": "Super Meat Boy",
+  "img": "covers/meat.webp",
+  "url": "truffled/supermeatboy/index.html"
+ },
+ {
+  "name": "Super Monkey Ball 1 & 2",
+  "img": "covers/monk.webp",
+  "url": "truffled/supermonkeyball12/monk.html"
+ },
+ {
+  "name": "Super Monkey Ball JR",
+  "img": "covers/supermonkey.webp",
+  "url": "truffled/supermonkeyballjr/supermonkey.html"
+ },
+ {
+  "name": "Super Oliver World",
+  "img": "covers/superoliverworld.webp",
+  "url": "truffled/superoliverworld/superoliverworld.html"
+ },
+ {
+  "name": "Super Smash Bros",
+  "img": "covers/ssm.webp",
+  "url": "truffled/supersmashbros/ssm.html"
+ },
+ {
+  "name": "Super Smash Flash",
+  "img": "covers/supersmash.webp",
+  "url": "truffled/supersmashflash/ssf.html"
+ },
+ {
+  "name": "Super Smash Flash 2",
+  "img": "covers/ssf2.webp",
+  "url": "truffled/supersmashflash2/ssf2.html"
+ },
+ {
+  "name": "Survivor.io",
+  "img": "covers/survivorio.webp",
+  "url": "truffled/survivoriowebport/survivor.html"
+ },
+ {
+  "name": "Taiko No Tatsujini",
+  "img": "covers/taiko.webp",
+  "url": "truffled/taikonotatsujini/index.html"
+ },
+ {
+  "name": "Tanuki Sunset",
+  "img": "covers/tanukisunset.webp",
+  "url": "truffled/tanukisunset/index.html"
+ },
+ {
+  "name": "Tattle Tail",
+  "img": "covers/tat.webp",
+  "url": "truffled/tattletailwebport/index.html"
+ },
+ {
+  "name": "Tax Heaven 3000",
+  "img": "",
+  "url": "truffled/taxheaven3000webport/index.html"
+ },
+ {
+  "name": "Ten Basket",
+  "img": "covers/ten.webp",
+  "url": "truffled/tenbasket/index.html"
+ },
+ {
+  "name": "Terraria",
+  "img": "covers/ter.webp",
+  "url": "truffled/terrariawebport/terraria-wrapper.html"
+ },
+ {
+  "name": "Tetris",
+  "img": "covers/tet.webp",
+  "url": "truffled/tetris/index.html"
+ },
+ {
+  "name": "Tetrisweeper",
+  "img": "covers/tetriss.webp",
+  "url": "truffled/tetrisweeper/index.html"
+ },
+ {
+  "name": "Thats Not My Neighbor",
+  "img": "covers/thatsnot.webp",
+  "url": "truffled/thatsnotmyneighborwebport/thatsnot.html"
+ },
+ {
+  "name": "The Binding Of Isaac Wrath Of The Lamb",
+  "img": "covers/tboiw.webp",
+  "url": "truffled/thebindingofisaacwrathofthelamb/tboiw.html"
+ },
+ {
+  "name": "The Binding Of Isaac Wrath Of The Lamb: Eternal",
+  "img": "covers/boilambeternal.webp",
+  "url": "truffled/thebindingofisaacwrathofthelambeternal/boilambeternal.html"
+ },
+ {
+  "name": "The Binding Of Issac",
+  "img": "covers/tboi.webp",
+  "url": "truffled/thebindingofissac/index.html"
+ },
+ {
+  "name": "The Binding Of Issac: Rebirth",
+  "img": "covers/tboir.webp",
+  "url": "truffled/thebindingofissacrebirthwebport/index.html"
+ },
+ {
+  "name": "The Impossible Quiz",
+  "img": "covers/quiz.webp",
+  "url": "truffled/theimpossiblequiz/index.html"
+ },
+ {
+  "name": "The Legend of Zelda Ocarina of Time",
+  "img": "covers/tloz.webp",
+  "url": "truffled/thelegendofzeldaocarinaoftime/tloz.html"
+ },
+ {
+  "name": "There Is No Game",
+  "img": "",
+  "url": "truffled/thereisnogame/index.html"
+ },
+ {
+  "name": "Time Shooter 1",
+  "img": "covers/tim1.webp",
+  "url": "truffled/timeshooter1/time1.html"
+ },
+ {
+  "name": "Time Shooter 2",
+  "img": "covers/tim2.webp",
+  "url": "truffled/timeshooter2/index.html"
+ },
+ {
+  "name": "Time Shooter 3",
+  "img": "covers/tim3.webp",
+  "url": "truffled/timeshooter3/index.html"
+ },
+ {
+  "name": "Tiny Fishing",
+  "img": "covers/tiny.webp",
+  "url": "truffled/tinyfishing/index.html"
+ },
+ {
+  "name": "To The Core",
+  "img": "covers/to.webp",
+  "url": "truffled/tothecorewebport/index.html"
+ },
+ {
+  "name": "Tomb Of The Mask",
+  "img": "covers/tomb.webp",
+  "url": "truffled/tombofthemask/index.html"
+ },
+ {
+  "name": "Tomodachi Collection",
+  "img": "covers/tomo.webp",
+  "url": "truffled/tomodachicollection/tomo.html"
+ },
+ {
+  "name": "Touhou 1 Touhou-Reiiden",
+  "img": "covers/touhou.webp",
+  "url": "truffled/touhou1touhoureiiden/touhou.html"
+ },
+ {
+  "name": "Touhou 2 Touhou-Fuumaroku",
+  "img": "",
+  "url": "truffled/touhou2touhoufuumaroku/touhou2.html"
+ },
+ {
+  "name": "Touhou 3 Touhou-Yumejikuu",
+  "img": "",
+  "url": "truffled/touhou3touhouyumejikuu/touhou3.html"
+ },
+ {
+  "name": "Touhou 4 Touhou-Gensokyou",
+  "img": "",
+  "url": "truffled/touhou4touhougensokyou/touhou4.html"
+ },
+ {
+  "name": "Touhou 5 Touhou-Kaikidan",
+  "img": "",
+  "url": "truffled/touhou5touhoukaikidan/touhou5.html"
+ },
+ {
+  "name": "Touhou Mother",
+  "img": "",
+  "url": "truffled/touhoumotherwebport/index.html"
+ },
+ {
+  "name": "Tube Jumpers",
+  "img": "covers/tube.webp",
+  "url": "truffled/tubejumpers/tube.html"
+ },
+ {
+  "name": "Tung Tung Basics",
+  "img": "",
+  "url": "truffled/tungtungbasicswebport/index.html"
+ },
+ {
+  "name": "Tung Tung Horror",
+  "img": "covers/tung.webp",
+  "url": "truffled/tungtunghorror/tung.html"
+ },
+ {
+  "name": "Ultrakill",
+  "img": "covers/ultra.webp",
+  "url": "truffled/ultrakillwebport/index.html"
+ },
+ {
+  "name": "Ultrapool",
+  "img": "covers/ultrapool.webp",
+  "url": "truffled/ultrapoolwebport/ultrapool.html"
+ },
+ {
+  "name": "Um Jammer Lammy",
+  "img": "covers/jammer.webp",
+  "url": "truffled/umjammerlammy/jemmer.html"
+ },
+ {
+  "name": "Undertale 10th Anniversary",
+  "img": "",
+  "url": "truffled/undertale10thanniversarywebport/index.html"
+ },
+ {
+  "name": "Undertale Last Breath",
+  "img": "",
+  "url": "truffled/undertalelastbreath/udlb.html"
+ },
+ {
+  "name": "Undertale Yellow",
+  "img": "",
+  "url": "truffled/undertaleyellowwebport/play.html"
+ },
+ {
+  "name": "Undertale",
+  "img": "covers/uertale.webp",
+  "url": "truffled/undertalewebport/undertale.html"
+ },
+ {
+  "name": "Untitled Goose Game",
+  "img": "covers/untitled.webp",
+  "url": "truffled/untitledgoosegamewebport/index.html"
+ },
+ {
+  "name": "Vex",
+  "img": "covers/vex.webp",
+  "url": "truffled/vex/index.html"
+ },
+ {
+  "name": "Vex 2",
+  "img": "covers/vex2.webp",
+  "url": "truffled/vex2/vex2.html"
+ },
+ {
+  "name": "Vex 3",
+  "img": "covers/vex3.webp",
+  "url": "truffled/vex3/index.html"
+ },
+ {
+  "name": "Vex 4",
+  "img": "covers/vex4.webp",
+  "url": "truffled/vex4/index.html"
+ },
+ {
+  "name": "Vex 5",
+  "img": "covers/vex5.webp",
+  "url": "truffled/vex5/index.html"
+ },
+ {
+  "name": "Vex 6",
+  "img": "covers/vex6.webp",
+  "url": "truffled/vex6/vex6.html"
+ },
+ {
+  "name": "Vex 7",
+  "img": "covers/vex7.webp",
+  "url": "truffled/vex7/vex7.html"
+ },
+ {
+  "name": "Vex 8",
+  "img": "covers/vex8.webp",
+  "url": "truffled/vex8/vex8.html"
+ },
+ {
+  "name": "Vib-Ribbon",
+  "img": "",
+  "url": "truffled/vibribbonwebport/vib.html"
+ },
+ {
+  "name": "Volley Random",
+  "img": "",
+  "url": "truffled/volleyrandom/index.html"
+ },
+ {
+  "name": "Warioware D.I.Y",
+  "img": "covers/wariowarediy.webp",
+  "url": "truffled/wariowarediy/wariowarediy.html"
+ },
+ {
+  "name": "We Become What We behold",
+  "img": "covers/wbwwb.webp",
+  "url": "truffled/webecomewhatwebehold/wbwwb.html"
+ },
+ {
+  "name": "Webfishing",
+  "img": "covers/web.webp",
+  "url": "truffled/webfishingwebport/index.html"
+ },
+ {
+  "name": "Who's Your Daddy",
+  "img": "covers/daddy.webp",
+  "url": "truffled/whosyourdaddywebport/index.html"
+ },
+ {
+  "name": "Witch's Heart",
+  "img": "covers/witches.webp",
+  "url": "truffled/witchsheartwebport/witches.html"
+ },
+ {
+  "name": "Woody's Incredible Journey To The Escape From Eternal Terror",
+  "img": "covers/WIJ.webp",
+  "url": "truffled/woodysincrediblejourneytotheescapefrometernalterror/index.html"
+ },
+ {
+  "name": "Wordle",
+  "img": "covers/wrdd.webp",
+  "url": "truffled/wordle/index.html"
+ },
+ {
+  "name": "Worlds Hardest Game",
+  "img": "covers/world.webp",
+  "url": "truffled/worldshardestgame/twhg.html"
+ },
+ {
+  "name": "Worlds Hardest Game 2",
+  "img": "",
+  "url": "truffled/worldshardestgame2/index.html"
+ },
+ {
+  "name": "Worlds Hardest Game 3",
+  "img": "",
+  "url": "truffled/worldshardestgame3/index.html"
+ },
+ {
+  "name": "Yandere Simulator",
+  "img": "covers/yandere.webp",
+  "url": "truffled/yanderesimulatorwebport/yandere.html"
+ },
+ {
+  "name": "Yoked",
+  "img": "covers/yoked.webp",
+  "url": "truffled/yoked/yoked.html"
+ },
+ {
+  "name": "Your Only Move Is HUSTLE, YOMI Hustle",
+  "img": "covers/YOMI.webp",
+  "url": "truffled/youronlymoveishustleyomihustlewebport/index.html"
+ },
+ {
+  "name": "Yume Nikki",
+  "img": "covers/yumi.webp",
+  "url": "truffled/yumenikkiwebport/yume.html"
+ }
+]
